@@ -7,7 +7,7 @@ const  Post= (props) => {
             {props.massege}
             <div>
             <span>
-                dislikes =  {props.likes}
+                likes =  {props.likes}
             </span>
             </div>
     </div>
