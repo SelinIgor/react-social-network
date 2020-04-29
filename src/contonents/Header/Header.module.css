@@ -1,0 +1,7 @@
+.Header{
+    grid-area: h;
+    background: dimgray;
+}
+.Header img{
+    max-height: 50px;
+}

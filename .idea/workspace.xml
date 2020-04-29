@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0bf63d06-d0be-41bc-9452-1feec5aa01ba" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/my-app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contonents/Havbar/Nav.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contonents/Header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contonents/Header/Header.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contonents/Nav.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contonents/ProfileCom.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contonents/ProfileCom/My posts/MyPosts.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contonents/ProfileCom/My posts/MyPosts.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contonents/ProfileCom/My posts/Post/Post.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contonents/ProfileCom/My posts/Post/Post.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/contonents/ProfileCom/ProfileCom.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1b7d64t3gxeSzdU8OSvQiOrKDlW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/contonents/ProfileCom/My posts/Post" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\bread\React\projects\01-first-project\my-app\src\contonents\ProfileCom" />
+      <recent name="E:\bread\React\projects\01-first-project\my-app\src\contonents" />
+      <recent name="E:\bread\React\projects\01-first-project\my-app\src" />
+      <recent name="E:\bread\React\projects\01-first-project\my-app\src\contonents\Havbar" />
+      <recent name="E:\bread\React\projects\01-first-project\my-app\src\contonents\Header" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\bread\React\projects\01-first-project\my-app\src\contonents\ProfileCom\My posts\Post" />
+      <recent name="E:\bread\React\projects\01-first-project\my-app\src\contonents\ProfileCom\My posts" />
+      <recent name="E:\bread\React\projects\01-first-project\my-app\src\contonents" />
+      <recent name="E:\bread\React\projects\01-first-project\my-app\src" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0bf63d06-d0be-41bc-9452-1feec5aa01ba" name="Default Changelist" comment="" />
+      <created>1587986887709</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587986887709</updated>
+      <workItem from="1587986891618" duration="2804000" />
+      <workItem from="1587989713747" duration="5000" />
+      <workItem from="1587996679070" duration="13050000" />
+      <workItem from="1588017637630" duration="4248000" />
+      <workItem from="1588063843899" duration="2344000" />
+      <workItem from="1588080897266" duration="14000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#ESLint" timestamp="1588019618066">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#ESLint/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588019618066" />
+    <state x="725" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588001055223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="725" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588001055223" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1588018122036">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588018122036" />
+  </component>
+</project>
