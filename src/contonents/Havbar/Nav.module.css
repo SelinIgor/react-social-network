@@ -1,17 +1,14 @@
 .Nav{
+    margin: 5px 0px 5px 0px;
     grid-area: n;
     background: #4a6da7;
 }
-.Nav div{
-    background: darkgrey;
-    margin:0 0 5px 0;
-    box-sizing: border-box;
 
-
-}
 .item{
     text-align: center;
-    margin: 5px;
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px;
+    padding: 3px;
 
     color: white;
     font-size: 15px;

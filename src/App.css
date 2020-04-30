@@ -9,15 +9,14 @@ a:hover{
     width: 1200px;
     display: grid;
     grid-template-areas:
-            "h h"
-            "n c";
-    grid-template-rows: 60px 1fr;
-    grid-template-columns: 20% ;
-    grid-gap: 10px;
+            "h"
+            "n"
+            "c";
+    grid-template-rows: 60px 60px 5fr;
 }
 .app-wrapper-content{
     background: darkgrey;
     grid-area: c;
-    height: 100%;
+
 
 }
