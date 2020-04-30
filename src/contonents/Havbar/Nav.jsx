@@ -3,7 +3,7 @@ import s from './Nav.module.css'
 import {NavLink} from "react-router-dom";
 const Nav = ()=> {
     return (<div className={s.Nav}>
-        <ul>
+        <ul className={s.ul}>
             <li className={`${s.item}`}>
                 <NavLink to="/ProfileCom" activeClassName={s.active}>Profile</NavLink>
             </li>
@@ -16,5 +16,6 @@ const Nav = ()=> {
             <li className={s.item}>
                 <NavLink to="/setting" activeClassName={s.active}> Setting</NavLink>
             </li>
+            <li className={`${s.item} ${s.exit}`}><NavLink to="/setting" activeClassName={s.active}> Exit</NavLink></li>
         </ul></div>);}
         export default Nav;
