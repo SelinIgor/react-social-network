@@ -1,6 +1,6 @@
 import React from 'react';
-import a from './ProfileCom/ProfileCom.module.css';
-import Myposts from "./ProfileCom/My posts/MyPosts";
+import a from './ProfileCom.module.css';
+import Myposts from "./My posts/MyPosts";
 
 const ProfileCom = () => {
     return (

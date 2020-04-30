@@ -1,6 +1,6 @@
 .Header{
     grid-area: h;
-    background: dimgray;
+    background: #4a6da7;
 }
 .Header img{
     max-height: 50px;

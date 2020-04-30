@@ -1,20 +1,28 @@
 .Nav{
-    background: dimgray;
     grid-area: n;
+    background: #4a6da7;
 }
 .Nav div{
+    background: darkgrey;
+    margin:0 0 5px 0;
     box-sizing: border-box;
-    border: 4px solid black;
 
 
 }
 .item{
     text-align: center;
-    margin: 6px;
-    background: darkgray;
+    margin: 5px;
+
     color: white;
     font-size: 15px;
 }
 .active{
+    color: black;
     font-weight: bold;
+}
+.item a {
+    color: black;
+}
+.item a:hover{
+    border-bottom: 2px solid black;
 }

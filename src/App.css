@@ -15,3 +15,9 @@ a:hover{
     grid-template-columns: 20% ;
     grid-gap: 10px;
 }
+.app-wrapper-content{
+    background: darkgrey;
+    grid-area: c;
+    height: 100%;
+
+}
