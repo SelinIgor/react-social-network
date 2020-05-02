@@ -17,6 +17,7 @@ a:hover{
 .app-wrapper-content{
     background: darkgrey;
     grid-area: c;
+    min-height: 1000px;
 
 
 }

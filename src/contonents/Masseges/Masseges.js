@@ -1,35 +1,19 @@
 import React from 'react';
 import s from './Masseges.module.css';
-import {NavLink} from "react-router-dom";
-
-
+import DialogItem from "./DialogItem/DialogItem";
+import MessageItem from "./MassegeItem/MassegeItem";
+let dialogs =[{name:"Igor", id:1},{name:"Nestor", id:2},{name:"Marta" ,id:3},{name:"Oleg", id:4}];
+let masseges =[{text:'Hi there'},{text:'What Am I doing wrong?'},{text:'Nothing. Cant get it'},{text:'Okey'}];
+let DislogsElemets = dialogs.map((dialog)=>{return <DialogItem name={dialog.name} id={dialog.id}/> });
+let MassegesElements = masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
 const Masseges = ()=> {
-    return (
-        <div className={s["mainMasseges"]}>
-            <div className={s["dialogsItem"]}>
-                <div className={`${s.dialog } ${s.active}`}> <NavLink to="/Masseges/1">Igor</NavLink></div>
-
-                <div className={s.dialog}><NavLink to="/Masseges/2"> Oleg</NavLink></div>
-
-                <div className={s.dialog}><NavLink to="/Masseges/3"> Nestor</NavLink></div>
-
-                <div className={s.dialog}><NavLink to="/Masseges/4"> Stepan</NavLink></div>
-
-                <div className={s.dialog}><NavLink to="/Masseges/5"> Taras</NavLink></div>
-            </div>
-            <div className={s.masseges}>
-                <div> Hi!</div>
-                <div> Hello!</div>
-                <div> You are stupid</div>
-                <div> I know</div>
-            </div>
-
-
-
+    return (<div className={s["mainMasseges"]}>
+        <div className={s["dialogsItem"]}>
+            {DislogsElemets}
         </div>
-
-    );
-}
-
-
-export default Masseges;
+        <div className={s.dialogs}>
+            {MassegesElements}
+        </div></div>
+        );
+        }
+        export default Masseges;

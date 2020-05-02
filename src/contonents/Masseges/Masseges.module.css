@@ -1,10 +1,7 @@
 .mainMasseges{
     display: grid;
-
     grid-template-columns:  4fr 6fr ;
     grid-gap: 25px;
-
-
 }
 .dialogsItem{
 padding: 10px;
@@ -12,10 +9,7 @@ padding: 10px;
 .active{
     font-weight: bold;
 }
-.dialog{
-
-}
-.masseges{
+.dialogs{
 padding: 10px;
 
 }
