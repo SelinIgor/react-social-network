@@ -21,7 +21,6 @@ const Myposts = () => {
                 <button> Share</button>
                 </div>
             </div>
-            
             <div className={a.posts}>
                 {PostElements}
                 {/*<Post massege={PostData[0].massege} kartinka={PostData[0].kartinka} likes={PostData[0].likes}/>*/}
