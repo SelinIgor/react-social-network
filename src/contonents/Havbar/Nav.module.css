@@ -1,0 +1,28 @@
+.Nav{
+    margin: 5px 0px 5px 0px;
+    grid-area: n;
+    background: #4a6da7;
+}
+
+.item{
+    text-align: center;
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px;
+    padding: 3px;
+
+    color: white;
+    font-size: 15px;
+}
+.active{
+    color: black;
+    font-weight: bold;
+}
+.item a {
+    color: black;
+}
+.item a:hover{
+    border-bottom: 2px solid black;
+}
+.exit{
+    float: right;
+}
