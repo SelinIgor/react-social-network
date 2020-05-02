@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="0bf63d06-d0be-41bc-9452-1feec5aa01ba" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/contonents/Masseges/DialogItem/DialogItem.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/contonents/Masseges/MassegeItem/MassegeItem.js" afterDir="false" />
@@ -15,6 +16,9 @@
       <change beforePath="$PROJECT_DIR$/src/contonents/ProfileCom/ProfileCom.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/contonents/ProfileCom/ProfileCom.module.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+=======
+    <list default="true" id="0bf63d06-d0be-41bc-9452-1feec5aa01ba" name="Default Changelist" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,6 +251,7 @@
       <workItem from="1588017637630" duration="4248000" />
       <workItem from="1588063843899" duration="2344000" />
       <workItem from="1588080897266" duration="615000" />
+<<<<<<< Updated upstream
       <workItem from="1588159762220" duration="21000" />
       <workItem from="1588160815286" duration="522000" />
       <workItem from="1588161458805" duration="13043000" />
@@ -258,6 +263,9 @@
       <workItem from="1588353722137" duration="5432000" />
       <workItem from="1588419792743" duration="2252000" />
       <workItem from="1588423277615" duration="710000" />
+=======
+      <workItem from="1588159762220" duration="387000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
