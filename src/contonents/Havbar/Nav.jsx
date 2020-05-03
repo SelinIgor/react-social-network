@@ -16,6 +16,6 @@ const Nav = ()=> {
             <li className={s.item}>
                 <NavLink to="/setting" activeClassName={s.active}> Setting</NavLink>
             </li>
-            <li className={`${s.item} ${s.exit}`}><NavLink to="/setting" activeClassName={s.active}> Exit</NavLink></li>
+            <li className={`${s.item} ${s.exit}`}><NavLink to="/exit" activeClassName={s.active}> Exit</NavLink></li>
         </ul></div>);}
         export default Nav;
