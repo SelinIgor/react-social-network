@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0bf63d06-d0be-41bc-9452-1feec5aa01ba" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Soc.net" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1b7d64t3gxeSzdU8OSvQiOrKDlW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="D:\Igor's project\Soc.net\node_modules\eslint" />
+    <property name="node.js.selected.package.standard" value="D:\Igor's project\Soc.net\node_modules\eslint" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Igor's project\Soc.net\src\contonents\Masseges\MassegeItem" />
+      <recent name="D:\Igor's project\Soc.net\src\contonents\Masseges\DialogItem" />
+      <recent name="D:\Igor's project\Soc.net\src\contonents\Setting" />
+      <recent name="D:\Igor's project\Soc.net\src\contonents\Music" />
+      <recent name="D:\Igor's project\Soc.net\src\contonents\Masseges" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Igor's project\Soc.net\src\contonents\ProfileCom" />
+      <recent name="D:\Igor's project\Soc.net\src\contonents\Header" />
+      <recent name="D:\Igor's project\Soc.net\src\contonents\Havbar" />
+      <recent name="D:\Igor's project\Soc.net\src\contonents\Masseges" />
+      <recent name="E:\bread\React\projects\01-first-project\my-app\src\contonents\ProfileCom" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0bf63d06-d0be-41bc-9452-1feec5aa01ba" name="Default Changelist" comment="" />
+      <created>1587986887709</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587986887709</updated>
+      <workItem from="1587986891618" duration="2804000" />
+      <workItem from="1587989713747" duration="5000" />
+      <workItem from="1587996679070" duration="13050000" />
+      <workItem from="1588017637630" duration="4248000" />
+      <workItem from="1588063843899" duration="2344000" />
+      <workItem from="1588080897266" duration="615000" />
+      <workItem from="1588159762220" duration="21000" />
+      <workItem from="1588160815286" duration="522000" />
+      <workItem from="1588161458805" duration="13043000" />
+      <workItem from="1588189225803" duration="3396000" />
+      <workItem from="1588272376863" duration="97000" />
+      <workItem from="1588272828472" duration="257000" />
+      <workItem from="1588273162874" duration="6651000" />
+      <workItem from="1588330409769" duration="5650000" />
+      <workItem from="1588353722137" duration="5432000" />
+      <workItem from="1588419792743" duration="2252000" />
+      <workItem from="1588423277615" duration="710000" />
+      <workItem from="1588428423045" duration="167000" />
+      <workItem from="1588433128745" duration="400000" />
+      <workItem from="1588433554908" duration="132000" />
+      <workItem from="1588433722468" duration="499000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/Soc.net" />
+    </ignored-roots>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="552" y="178" key="#ESLint" timestamp="1588019618066">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#ESLint/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588019618066" />
+    <state x="725" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588001055223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="725" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588001055223" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1588018122036">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588018122036" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1588433665587">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588433665587" />
+    <state x="614" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588513182110">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="614" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588513182110" />
+  </component>
+</project>
