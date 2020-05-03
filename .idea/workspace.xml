@@ -4,8 +4,8 @@
     <list default="true" id="0bf63d06-d0be-41bc-9452-1feec5aa01ba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contonents/ProfileCom/My posts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contonents/ProfileCom/My posts/MyPosts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/contonents/ProfileCom/ProfileCom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contonents/ProfileCom/ProfileCom.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contonents/Masseges/Masseges.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/contonents/Masseges/Masseges.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,5 +137,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588433665587" />
+    <state x="614" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588513182110">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="614" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588513182110" />
   </component>
 </project>
