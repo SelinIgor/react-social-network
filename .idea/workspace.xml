@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bf63d06-d0be-41bc-9452-1feec5aa01ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Soc.net" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contonents/ProfileCom/My posts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contonents/ProfileCom/My posts/MyPosts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/contonents/ProfileCom/ProfileCom.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contonents/ProfileCom/ProfileCom.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

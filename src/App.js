@@ -9,7 +9,8 @@ import {BrowserRouter,Route} from "react-router-dom"
 import Music from "./contonents/Music/Music";
 
 
-const App = ()=> {
+const App = (props)=> {
+
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -17,7 +18,7 @@ const App = ()=> {
                 <Nav/>
                 <div className="app-wrapper-content">
                     <Route path='/masseges' component={Masseges}/>
-                    <Route path="/profileCom" component={ProfileCom}/>
+                    <Route path="/profileCom" render={()=><ProfileCom dates={props.postdata}/>}/>
                     <Route path="/music" component={Music}/>
                 </div>
             </div>
