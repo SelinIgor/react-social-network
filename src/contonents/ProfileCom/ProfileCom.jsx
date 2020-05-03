@@ -3,12 +3,11 @@ import a from './ProfileCom.module.css';
 import Myposts from "./My posts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
-const ProfileCom = (props) => {
-
+const ProfileCom = () => {
     return (
         <div className={a.content}>
             <ProfileInfo/>
-            <Myposts data={props.dates}/>
+            <Myposts/>
 
         </div>);
 }
