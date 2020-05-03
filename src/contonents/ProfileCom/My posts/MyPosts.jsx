@@ -4,6 +4,7 @@ import Post from "./Post/Post";
 
 const Myposts = (props) => {
 
+
    let PostElements = props.postData.map((post)=><Post massege={post.massege} kartinka={post.kartinka} likes={post.likes}/>);
     return (
         <div>
@@ -21,6 +22,7 @@ const Myposts = (props) => {
             </div>
             <div className={a.posts}>
                 {PostElements}
+
             </div>
 
         </div>);

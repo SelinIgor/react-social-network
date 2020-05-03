@@ -8,7 +8,11 @@ let postData =[{massege:'Hello, sabaki! Ya naruto uzumaki', kartinka:'https://kl
     {massege:'Whats wrong with you?' ,kartinka:"https://i.pinimg.com/originals/a9/d0/96/a9d096ac9430a4f297ed99d42861ae9d.jpg" ,likes:64}]
 ReactDOM.render(
   <React.StrictMode>
+
     <App postData={postData} />
+
+    <App postData={postData}/>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
