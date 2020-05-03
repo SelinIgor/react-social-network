@@ -15,6 +15,10 @@ const App = ()=> {
             <div className="app-wrapper">
                 <Header/>
                 <Nav/>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                 <div className="app-wrapper-content">
                     <Route path='/masseges' component={Masseges}/>
                     <Route path="/profileCom" component={ProfileCom}/>
