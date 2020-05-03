@@ -16,6 +16,7 @@ const App = (props)=> {
             <div className="app-wrapper">
                 <Header/>
                 <Nav/>
+                
                 <div className="app-wrapper-content">
                     <Route path='/masseges' render={()=><Masseges dialogs={props.dialogsData} messages={props.masseges}/>}/>
                     <Route path="/profileCom" render={()=><ProfileCom dates={props.postdata}/>}/>
