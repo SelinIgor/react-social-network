@@ -8,14 +8,13 @@ import Masseges from "./contonents/Masseges/Masseges";
 import {BrowserRouter,Route} from "react-router-dom"
 import Music from "./contonents/Music/Music";
 
-const App = (props)=> {
 
+const App = ()=> {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Nav/>
-                
                 <div className="app-wrapper-content">
                     <Route path='/masseges' component={Masseges}/>
                     <Route path="/profileCom" component={ProfileCom}/>
