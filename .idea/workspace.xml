@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0bf63d06-d0be-41bc-9452-1feec5aa01ba" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Soc.net" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+>>>>>>> parent of defa872... accept
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,11 +17,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   <component name="FavoritesManager">
     <favorites_list name="Soc.net" />
   </component>
 >>>>>>> parent of a2cf715... Merge pull request #2 from SelinIgor/transport-data-up
+=======
+  <component name="FavoritesManager">
+    <favorites_list name="Soc.net" />
+  </component>
+>>>>>>> parent of defa872... accept
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -139,5 +150,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588433665587" />
+<<<<<<< HEAD
+=======
+    <state x="614" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1588513182110">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="614" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588513182110" />
+>>>>>>> parent of defa872... accept
   </component>
 </project>
