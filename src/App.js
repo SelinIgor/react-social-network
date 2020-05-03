@@ -5,7 +5,7 @@ import Header from "./contonents/Header/Header";
 import Nav from "./contonents/Havbar/Nav";
 import ProfileCom from "./contonents/ProfileCom/ProfileCom";
 import Masseges from "./contonents/Masseges/Masseges";
-import {BrowserRouter,Route} from "react-router-dom"
+import {BrowserRouter,Route} from "react-router-dom";
 import Music from "./contonents/Music/Music";
 
 
@@ -17,8 +17,8 @@ const App = (props)=> {
                 <Header/>
                 <Nav/>
                 <div className="app-wrapper-content">
-                    <Route path='/masseges' render={()=><Masseges dialogs={props.dialogs} masseges={props.masseges}/>}/>
-                    <Route path="/profileCom" render={()=><ProfileCom postData={props.postData}/>}/>
+                    <Route path='/masseges' render={()=><Masseges state={props.state.MassagePage}/>}/>
+                    <Route path="/profileCom" render={()=><ProfileCom state={props.state.ProfilePage}/>}/>
                     <Route path="/music" component={Music}/>
                 </div>
             </div>

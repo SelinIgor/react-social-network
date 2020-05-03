@@ -7,8 +7,8 @@ import MessageItem from "./MassegeItem/MassegeItem";
 
 
 const Masseges = (props)=> {
-    let MassegesElements = props.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
-    let DislogsElemets = props.dialogs.map((dialog)=>{return <DialogItem name={dialog.name} id={dialog.id}/> });
+    let MassegesElements = props.state.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
+    let DislogsElemets = props.state.dialogs.map((dialog)=>{return <DialogItem name={dialog.name} id={dialog.id}/> });
     return (<div className={s["mainMasseges"]}>
         <div className={s["dialogsItem"]}>
             {DislogsElemets}
