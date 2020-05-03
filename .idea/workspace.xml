@@ -95,7 +95,7 @@
       <workItem from="1588433128745" duration="400000" />
       <workItem from="1588433554908" duration="132000" />
       <workItem from="1588433722468" duration="499000" />
-      <workItem from="1588521865481" duration="524000" />
+      <workItem from="1588521865481" duration="790000" />
     </task>
     <servers />
   </component>
@@ -143,7 +143,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/contonents/ProfileCom/My posts/MyPosts.jsx</url>
-          <line>7</line>
+          <line>10</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
