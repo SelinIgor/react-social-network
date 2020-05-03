@@ -11,6 +11,9 @@ let PostData =[{massege:'Hello, sabaki! Ya naruto uzumaki', kartinka:'https://kl
 ReactDOM.render(
   <React.StrictMode>
     <App postdata={PostData} masseges={masseges} dialogsData={dialogs} />
+
+
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
