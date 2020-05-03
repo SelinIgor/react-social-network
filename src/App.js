@@ -17,12 +17,8 @@ const App = (props)=> {
                 <Header/>
                 <Nav/>
                 <div className="app-wrapper-content">
-                    <Route path='/masseges' component={Masseges}/>
-
+                    <Route path='/masseges' render={()=><Masseges dialogs={props.dialogs} masseges={props.masseges}/>}/>
                     <Route path="/profileCom" render={()=><ProfileCom postData={props.postData}/>}/>
-
-                    <Route path="/profileCom" render={()=><ProfileCom postData={props.postData} />}/>
-
                     <Route path="/music" component={Music}/>
                 </div>
             </div>

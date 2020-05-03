@@ -2,11 +2,13 @@ import React from 'react';
 import s from './Masseges.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MassegeItem/MassegeItem";
-let dialogs =[{name:"Igor", id:1},{name:"Nestor", id:2},{name:"Marta" ,id:3},{name:"Oleg", id:4}];
-let masseges =[{text:'Hi there'},{text:'What Am I doing wrong?'},{text:'Nothing. Cant get it'},{text:'Okey'}];
-let DislogsElemets = dialogs.map((dialog)=>{return <DialogItem name={dialog.name} id={dialog.id}/> });
-let MassegesElements = masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
-const Masseges = ()=> {
+
+
+
+
+const Masseges = (props)=> {
+    let MassegesElements = props.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
+    let DislogsElemets = props.dialogs.map((dialog)=>{return <DialogItem name={dialog.name} id={dialog.id}/> });
     return (<div className={s["mainMasseges"]}>
         <div className={s["dialogsItem"]}>
             {DislogsElemets}
