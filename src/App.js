@@ -7,8 +7,6 @@ import ProfileCom from "./contonents/ProfileCom/ProfileCom";
 import Masseges from "./contonents/Masseges/Masseges";
 import {BrowserRouter,Route} from "react-router-dom"
 import Music from "./contonents/Music/Music";
-
-
 const App = (props)=> {
 
     return (
