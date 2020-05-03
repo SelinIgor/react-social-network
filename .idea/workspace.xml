@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bf63d06-d0be-41bc-9452-1feec5aa01ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/contonents/ProfileCom/My posts/MyPosts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/contonents/ProfileCom/My posts/MyPosts.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="0bf63d06-d0be-41bc-9452-1feec5aa01ba" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +95,7 @@
       <workItem from="1588433128745" duration="400000" />
       <workItem from="1588433554908" duration="132000" />
       <workItem from="1588433722468" duration="499000" />
-      <workItem from="1588521865481" duration="244000" />
+      <workItem from="1588521865481" duration="524000" />
     </task>
     <servers />
   </component>
@@ -139,5 +137,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="614" y="135" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/-1440.0.1440.860@0.0.1920.1040" timestamp="1588513182110" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/contonents/ProfileCom/My posts/MyPosts.jsx</url>
+          <line>7</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
