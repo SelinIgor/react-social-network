@@ -4,7 +4,8 @@
 .dialogs{
     padding: 10px;
 
-
+    display: flex;
+    flex-direction: row;
 
 
 }
@@ -24,4 +25,7 @@
     width: auto;
     height: 100%;
 
+}
+.nameDialog{
+    margin: auto 0 auto 3px;
 }
