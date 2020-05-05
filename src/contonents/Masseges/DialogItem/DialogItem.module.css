@@ -6,6 +6,8 @@
 
     display: flex;
     flex-direction: row;
+    margin: 5px;
+    border: 2px solid lightslategrey;
 
 
 }
@@ -27,5 +29,8 @@
 
 }
 .nameDialog{
+    color: black;
+    font-size: 18px;
     margin: auto 0 auto 3px;
+
 }

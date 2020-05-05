@@ -6,3 +6,11 @@
 .dialogsItem{
 padding: 10px;
 }
+.inputMassage{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    border-top: 2px solid lightslategrey;
+
+}
