@@ -16,8 +16,9 @@ const App = (props)=> {
                 <Nav/>
                 <div className="app-wrapper-content">
                     <Route path='/masseges' render={()=><Masseges state={props.state.MassagePage}/>}/>
-                    <Route path="/profileCom" render={()=><ProfileCom state={props.state.ProfilePage}
-                                                                      addPost={props.addPost}/>}/>
+                    <Route path="/profileCom" render={()=><ProfileCom profilePage={props.state.ProfilePage}
+                                                                      addPost={props.addPost}
+                                                                      changeNewPostText={props.changeNewPostText} />}/>
                     <Route path="/music" component={Music}/>
                 </div>
             </div>
