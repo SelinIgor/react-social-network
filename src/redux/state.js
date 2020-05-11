@@ -1,4 +1,7 @@
-import {RerenderEntireTree} from "../render";
+let RerenderEntireTree = () =>{
+    console.log("State changed");
+}
+
 
 let state = {
 ProfilePage:{
@@ -45,4 +48,7 @@ export let changeNewSmsText = (NewText)=>{
     RerenderEntireTree(state);
 };
 
+export const subscribe =(observe)=>{
+RerenderEntireTree= observe;
+}
 export default state;
