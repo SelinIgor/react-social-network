@@ -7,10 +7,16 @@ import MessageItem from "./MassegeItem/MassegeItem";
 
 
 const Masseges = (props)=> {
+    debugger;
     let NewMassage = createRef();
     let SendSms = () =>{
-        let massage = NewMassage.current.value;
-        alert(`Congratulation! You've send massage:${massage}`);
+
+        props.addSms();
+
+    };
+    let OnSmsChange= () =>{
+let edsms = NewMassage.current.value;
+props.changeNewSmsText(edsms);
     }
 
     let MassegesElements = props.state.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
@@ -23,7 +29,7 @@ const Masseges = (props)=> {
             {MassegesElements}
             <div className={s.inputMassage}>
                 <div>
-    <textarea ref={NewMassage}>
+    <textarea ref={NewMassage} value={props.state.newSmsText} onChange={OnSmsChange}>
 
     </textarea>
                 </div>
