@@ -15,10 +15,9 @@ const App = (props)=> {
                 <Header/>
                 <Nav/>
                 <div className="app-wrapper-content">
-                    <Route path='/masseges' render={()=><Masseges state={props.state.MassagePage} addSms={props.addSms} changeNewSmsText={props.changeNewSmsText}/>}/>
+                    <Route path='/masseges' render={()=><Masseges state={props.state.MassagePage} dispatch={props.dispatch}/>}/>
                     <Route path="/profileCom" render={()=><ProfileCom profilePage={props.state.ProfilePage}
-                                                                      addPost={props.addPost}
-                                                                      changeNewPostText={props.changeNewPostText} />}/>
+                                                                      dispatch={props.dispatch}/>}/>
                     <Route path="/music" component={Music}/>
                 </div>
             </div>

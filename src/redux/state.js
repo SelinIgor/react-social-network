@@ -20,36 +20,39 @@ let store ={
     getState(){
         return this._state;
     },
-    addPost(){
+    subscribe(observe){
+        this._RerenderEntireTree= observe;
+    },
 
-        let NewPost ={
+    dispatch(action){
+        if(action.type==="ADD-POST"){
+            let NewPost = {
             massege: this._state.ProfilePage.newPostText,
-            kartinka:"https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg",
-            likes: 12};
+                kartinka:"https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg",
+                likes: 12};
         this._state.ProfilePage.postData.push(NewPost);
         this._state.ProfilePage.newPostText='';
         this._RerenderEntireTree(this._state);
-    },
-    changeNewPostText(NewText){
-        this._state.ProfilePage.newPostText = NewText;
-        this._RerenderEntireTree(this._state);
-},
-    addSms(){
-        let NewSms={
-            text: this._state.MassagePage.newSmsText
-        };
-        this._state.MassagePage.masseges.push(NewSms);
-        this._state.MassagePage.newSmsText = '';
-        this._RerenderEntireTree(this._state);
+        }
+        else if(action.type==="CHANGE-NEW-POST-TEXT")
+        {
+            this._state.ProfilePage.newPostText = action.NewText;
+            this._RerenderEntireTree(this._state);
+        }
+        else if(action.type==='NEW_SMS'){
+            let NewSms={
+                text: this._state.MassagePage.newSmsText
+            };
+            this._state.MassagePage.masseges.push(NewSms);
+            this._state.MassagePage.newSmsText = '';
+            this._RerenderEntireTree(this._state);
 
+        }
+        else if(action.type==='CHANGE-NEW-SMS-TEXT'){
+            this._state.MassagePage.newSmsText = action.NewText;
+            this._RerenderEntireTree(this._state);
+        }
     },
-    changeNewSmsText (NewText){
-        this._state.MassagePage.newSmsText = NewText;
-        this._RerenderEntireTree(this._state);
-    },
-    subscribe(observe){
-        this._RerenderEntireTree= observe;
-    }
 };
 
 

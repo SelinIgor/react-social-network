@@ -7,16 +7,15 @@ import MessageItem from "./MassegeItem/MassegeItem";
 
 
 const Masseges = (props)=> {
-    debugger;
     let NewMassage = createRef();
     let SendSms = () =>{
 
-        props.addSms();
+        props.dispatch({type:'NEW_SMS'});
 
     };
     let OnSmsChange= () =>{
 let edsms = NewMassage.current.value;
-props.changeNewSmsText(edsms);
+props.dispatch({type:'CHANGE-NEW-SMS-TEXT',NewText:edsms});
     }
 
     let MassegesElements = props.state.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
