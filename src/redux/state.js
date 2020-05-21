@@ -1,3 +1,10 @@
+const ADD_POST = "ADD-POST";
+const CHANGE_NEW_POST_TEXT = "CHANGE-NEW-POST-TEXT";
+
+const NEW_SMS = 'NEW_SMS';
+
+const CHANGE_NEW_SMS_TEXT = 'CHANGE-NEW-SMS-TEXT';
+
 let store ={
     _state : {
         ProfilePage:{
@@ -53,8 +60,21 @@ let store ={
             this._RerenderEntireTree(this._state);
         }
     },
+
 };
+export let addPostActionCreator = () => {
 
-
+    return  {type: ADD_POST}
+}
+export let changeNewPostTextActionCreator = (edtext) =>{
+    return {  type: CHANGE_NEW_POST_TEXT,
+        NewText: edtext}
+}
+export let newSmsActionCreator =()=>({
+    type: NEW_SMS
+})
+export let ChangeNewSmsTextActionCreator = (edsms)=>({
+    type: CHANGE_NEW_SMS_TEXT,NewText:edsms
+})
 
 export default store;

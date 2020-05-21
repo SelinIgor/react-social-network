@@ -7,3 +7,22 @@
     margin: 5px;
     border: 3px solid silver;
 }
+.styleTextArea{
+    border-radius: 10px;
+
+}
+.styleButton{
+    background: #4a6da7;
+    border-radius: 10px;
+    min-height: 25px;
+    margin-left: 10px;
+}
+div:focus{
+    color:white;
+}
+.sentArea{
+    margin-left: 25px;
+    display: flex;
+    align-items: center;
+
+}
