@@ -1,7 +1,5 @@
-const ADD_POST = 'ADD_POST';
-const CHANGE_NEW_POST_TEXT = 'CHANGE_NEW_POST_TEXT';
-const ADD_SMS = "ADD_SMS";
-const CHANGE_NEW_SMS_TEXT = "CHANGE_NEW_SMS_TEXT";
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
 let store ={
     _state :{
         ProfilePage:{
@@ -30,48 +28,12 @@ subscribe(observe){
         this._callsubscriber= observe;
     },
     dispatch(action){
-if (action.type===ADD_POST)
-{
-    let NewPost ={
-        massege: this._state.ProfilePage.newPostText,
-        kartinka:"https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg",
-        likes: 12
-    };
-    this._state.ProfilePage.postData.push(NewPost);
-    this._state.ProfilePage.newPostText='';
-    this._callsubscriber(this._state);
-}
-else if(action.type===CHANGE_NEW_POST_TEXT){
-    this._state.ProfilePage.newPostText = action.NewText;
-    this._callsubscriber(this._state);
-}
-else if(action.type===ADD_SMS){
-    let NewSms={
-        text: this._state.MassagePage.newSmsText
-    };
-    this._state.MassagePage.masseges.push(NewSms);
-    this._state.MassagePage.newSmsText = '';
-    this._callsubscriber(this._state);
-}
-else if(action.type===CHANGE_NEW_SMS_TEXT){
-    this._state.MassagePage.newSmsText = action.NewText;
-    this._callsubscriber(this._state);
-}
+
+        this._state.ProfilePage=  profileReducer(this._state.ProfilePage, action);
+        this._state.MassagePage=  dialogsReducer(this._state.MassagePage, action);
+        this._callsubscriber(this._state);
     }
 
-}
-export let sendSmsActionCreator=()=>{
-    return{type: ADD_SMS}
-};
-export let changeNewSmsTextActionCreator=(edsms)=>{
-    return{type: CHANGE_NEW_SMS_TEXT, NewText:edsms}
-}
-export const addPostActionCreator=()=>{
-    return{type: ADD_POST}
-
-}
-export const changeNewPostTextActionCreator=(edtext)=>{
-    return{type: CHANGE_NEW_POST_TEXT,NewText:edtext}
 }
 
 

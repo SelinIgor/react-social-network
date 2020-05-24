@@ -2,7 +2,8 @@ import React, {createRef} from 'react';
 import s from './Masseges.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MassegeItem/MassegeItem";
-import {changeNewSmsTextActionCreator, sendSmsActionCreator} from "../../redux/state";
+import {changeNewSmsTextActionCreator, sendSmsActionCreator} from "../../redux/dialogsReducer";
+
 
 
 
