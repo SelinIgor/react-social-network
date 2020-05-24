@@ -11,12 +11,12 @@ const Masseges = (props)=> {
     let NewMassage = createRef();
     let SendSms = () =>{
 
-        props.addSms();
+        props.dispatch({type:"ADD_SMS"});
 
     };
     let OnSmsChange= () =>{
 let edsms = NewMassage.current.value;
-props.changeNewSmsText(edsms);
+props.dispatch({type:"CHANGE_NEW_SMS_TEXT", NewText:edsms});
     }
 
     let MassegesElements = props.state.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
