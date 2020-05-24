@@ -1,4 +1,7 @@
-
+const ADD_POST = 'ADD_POST';
+const CHANGE_NEW_POST_TEXT = 'CHANGE_NEW_POST_TEXT';
+const ADD_SMS = "ADD_SMS";
+const CHANGE_NEW_SMS_TEXT = "CHANGE_NEW_SMS_TEXT";
 let store ={
     _state :{
         ProfilePage:{
@@ -27,7 +30,7 @@ subscribe(observe){
         this._callsubscriber= observe;
     },
     dispatch(action){
-if (action.type==='ADD_POST')
+if (action.type===ADD_POST)
 {
     let NewPost ={
         massege: this._state.ProfilePage.newPostText,
@@ -38,11 +41,11 @@ if (action.type==='ADD_POST')
     this._state.ProfilePage.newPostText='';
     this._callsubscriber(this._state);
 }
-else if(action.type==='CHANGE_NEW_POST_TEXT'){
+else if(action.type===CHANGE_NEW_POST_TEXT){
     this._state.ProfilePage.newPostText = action.NewText;
     this._callsubscriber(this._state);
 }
-else if(action.type==="ADD_SMS"){
+else if(action.type===ADD_SMS){
     let NewSms={
         text: this._state.MassagePage.newSmsText
     };
@@ -50,12 +53,27 @@ else if(action.type==="ADD_SMS"){
     this._state.MassagePage.newSmsText = '';
     this._callsubscriber(this._state);
 }
-else if(action.type==="CHANGE_NEW_SMS_TEXT"){
+else if(action.type===CHANGE_NEW_SMS_TEXT){
     this._state.MassagePage.newSmsText = action.NewText;
     this._callsubscriber(this._state);
 }
     }
 
 }
+export let sendSmsActionCreator=()=>{
+    return{type: ADD_SMS}
+};
+export let changeNewSmsTextActionCreator=(edsms)=>{
+    return{type: CHANGE_NEW_SMS_TEXT, NewText:edsms}
+}
+export const addPostActionCreator=()=>{
+    return{type: ADD_POST}
+
+}
+export const changeNewPostTextActionCreator=(edtext)=>{
+    return{type: CHANGE_NEW_POST_TEXT,NewText:edtext}
+}
+
+
 
 export default store;

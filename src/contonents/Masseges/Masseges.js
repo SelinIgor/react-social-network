@@ -2,21 +2,21 @@ import React, {createRef} from 'react';
 import s from './Masseges.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MassegeItem/MassegeItem";
-
+import {changeNewSmsTextActionCreator, sendSmsActionCreator} from "../../redux/state";
 
 
 
 const Masseges = (props)=> {
-    debugger;
+
     let NewMassage = createRef();
     let SendSms = () =>{
 
-        props.dispatch({type:"ADD_SMS"});
+        props.dispatch(sendSmsActionCreator());
 
     };
     let OnSmsChange= () =>{
 let edsms = NewMassage.current.value;
-props.dispatch({type:"CHANGE_NEW_SMS_TEXT", NewText:edsms});
+props.dispatch(changeNewSmsTextActionCreator(edsms));
     }
 
     let MassegesElements = props.state.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
