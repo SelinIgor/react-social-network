@@ -28,6 +28,7 @@ subscribe(observe){
         this._callsubscriber= observe;
     },
     dispatch(action){
+        
 
         this._state.ProfilePage=  profileReducer(this._state.ProfilePage, action);
         this._state.MassagePage=  dialogsReducer(this._state.MassagePage, action);

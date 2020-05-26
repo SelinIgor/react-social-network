@@ -1,5 +1,5 @@
 
-import store from "./redux/state";
+import store from "./redux/redux-store";
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -17,4 +17,7 @@ RerenderEntireTree(store.getState);
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-store.subscribe(RerenderEntireTree);
+store.subscribe(()=>{
+    let state = store.getState();
+    RerenderEntireTree(state);
+});
