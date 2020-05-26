@@ -20,9 +20,11 @@ props.dispatch(addPostActionCreator());
     };
 
    return (
+        <div className={a.MainConteiner}>
+            <div className={a.newPost}>
         <div>
             My posts
-
+        </div>
             <div>
                <div>
        <textarea onChange={onPostChange} ref={NewPostElement} value={props.newPostText}/>
@@ -30,12 +32,14 @@ props.dispatch(addPostActionCreator());
                 <div>
                 <button onClick={addingPost}> Share</button>
                 </div>
+
+                </div>
             </div>
             <div className={a.posts}>
                 {PostElements}
 
-            </div>
 
+            </div>
         </div>);
 }
 export default Myposts;

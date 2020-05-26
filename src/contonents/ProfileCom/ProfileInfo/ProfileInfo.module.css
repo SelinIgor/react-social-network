@@ -1,3 +1,29 @@
-.descriptionBlock{
-    padding: 20px;
+.conteiner{
+ margin: 50px 200px;
+}
+.background{
+
+    background-image: url("https://img.freepik.com/free-vector/abstract-technology-particle-background_52683-25766.jpg?size=626&ext=jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 25px;
+
+}
+.avatar{
+    margin-top: 100px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+
+}
+.userName{
+    opacity: 0.7;
+    color: white;
+    font-weight: 700;
+    font-size:20px;
+    text-transform: uppercase;
 }
