@@ -1,9 +1,7 @@
 a{
     text-decoration: none;
 }
-a:hover{
-    color: white;
-}
+
 .app-wrapper{
     margin: 0 auto;
     width: 1200px;

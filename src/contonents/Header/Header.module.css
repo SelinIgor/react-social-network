@@ -5,3 +5,14 @@
 .Header img{
     max-height: 50px;
 }
+.logoConteiner{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.nameLogo{
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
