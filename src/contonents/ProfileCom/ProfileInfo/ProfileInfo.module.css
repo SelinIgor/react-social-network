@@ -27,3 +27,7 @@
     font-size:20px;
     text-transform: uppercase;
 }
+.background img {
+    opacity: 1;
+    filter: alpha(opacity: 70);
+}

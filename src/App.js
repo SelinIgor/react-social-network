@@ -4,9 +4,9 @@ import './App.css';
 import Header from "./contonents/Header/Header";
 import Nav from "./contonents/Havbar/Nav";
 import ProfileCom from "./contonents/ProfileCom/ProfileCom";
-import Masseges from "./contonents/Masseges/Masseges";
 import {Route} from "react-router-dom";
 import Music from "./contonents/Music/Music";
+import MassegesContainer from "./contonents/Masseges/MassegesContainer";
 
 
 const App = (props)=> {
@@ -15,9 +15,8 @@ const App = (props)=> {
                 <Header/>
                 <Nav/>
                 <div className="app-wrapper-content">
-                    <Route path='/masseges' render={()=><Masseges state={props.state.MassagePage} dispatch={props.dispatch}/>}/>
-                    <Route path="/profileCom" render={()=><ProfileCom profilePage={props.state.ProfilePage}
-                                                                      dispatch={props.dispatch}/>}/>
+                    <Route path='/masseges' render={()=><MassegesContainer store={props.store}/>}/>
+                    <Route path="/profileCom" render={()=><ProfileCom  store={props.store}/>}/>
                     <Route path="/music" component={Music}/>
                 </div>
             </div>

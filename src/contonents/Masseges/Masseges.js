@@ -8,20 +8,18 @@ import {changeNewSmsTextActionCreator, sendSmsActionCreator} from "../../redux/d
 
 
 const Masseges = (props)=> {
-
+debugger;
     let NewMassage = createRef();
     let SendSms = () =>{
-
-        props.dispatch(sendSmsActionCreator());
+    props.sendSms();
 
     };
     let OnSmsChange= () =>{
 let edsms = NewMassage.current.value;
-props.dispatch(changeNewSmsTextActionCreator(edsms));
+props.changeNewSmsText(edsms);
     }
-
-    let MassegesElements = props.state.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
-    let DislogsElemets = props.state.dialogs.map((dialog)=>{return <DialogItem name={dialog.name} id={dialog.id} kartinka={dialog.kartinka}/> });
+    let MassegesElements = props.dialogsPage.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
+    let DislogsElemets = props.dialogsPage.dialogs.map((dialog)=>{return <DialogItem name={dialog.name} id={dialog.id} kartinka={dialog.kartinka}/> });
     return (<div className={s["mainMasseges"]}>
         <div className={s["dialogsItem"]}>
             {DislogsElemets}
@@ -30,7 +28,7 @@ props.dispatch(changeNewSmsTextActionCreator(edsms));
             {MassegesElements}
             <div className={s.inputMassage}>
                 <div>
-    <textarea ref={NewMassage} value={props.state.newSmsText} onChange={OnSmsChange}>
+    <textarea ref={NewMassage} value={props.newTextSms} onChange={OnSmsChange}>
 
     </textarea>
                 </div>
