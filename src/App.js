@@ -15,8 +15,8 @@ const App = (props)=> {
                 <Header/>
                 <Nav/>
                 <div className="app-wrapper-content">
-                    <Route path='/masseges' render={()=><MassegesContainer store={props.store}/>}/>
-                    <Route path="/profileCom" render={()=><ProfileCom  store={props.store}/>}/>
+                    <Route path='/masseges' render={()=><MassegesContainer/>}/>
+                    <Route path="/profileCom" render={()=><ProfileCom store={props.store} />}/>
                     <Route path="/music" component={Music}/>
                 </div>
             </div>
