@@ -1,0 +1,10 @@
+.userImg{
+    width: 100px;
+
+}
+.Container{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+
+}

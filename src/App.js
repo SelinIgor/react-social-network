@@ -7,6 +7,8 @@ import ProfileCom from "./contonents/ProfileCom/ProfileCom";
 import {Route} from "react-router-dom";
 import Music from "./contonents/Music/Music";
 import MassegesContainer from "./contonents/Masseges/MassegesContainer";
+import Users from "./contonents/Users/Users";
+import UsersContainer from "./contonents/Users/UsersContainer";
 
 
 const App = (props)=> {
@@ -17,6 +19,7 @@ const App = (props)=> {
                 <div className="app-wrapper-content">
                     <Route path='/masseges' render={()=><MassegesContainer/>}/>
                     <Route path="/profileCom" render={()=><ProfileCom store={props.store} />}/>
+                    <Route path='/users' render={()=><UsersContainer/>}/>
                     <Route path="/music" component={Music}/>
                 </div>
             </div>
