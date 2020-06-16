@@ -14,17 +14,21 @@ let InitialState ={
 
 let dialogsReducer=(state = InitialState,action)=>{
 switch (action.type) {
-    case ADD_SMS: {
-        let NewSms = {
-            text: state.newSmsText
-        };
-        state.masseges.push(NewSms);
-        state.newSmsText = '';
-        return state;
-    }
     case CHANGE_NEW_SMS_TEXT:{
-        state.newSmsText = action.NewText;
-        return state;
+       return  {...state,
+            newSmsText: action.NewText};
+    }
+
+    case ADD_SMS: {
+        let stateCopy = {...state,
+            masseges:[...state.masseges]};
+
+        let NewSms = {
+            text: stateCopy.newSmsText
+        };
+        stateCopy.masseges.push(NewSms);
+        stateCopy.newSmsText = '';
+        return stateCopy;
     }
     default: return state;
 }

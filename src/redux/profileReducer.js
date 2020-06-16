@@ -11,6 +11,11 @@ let InitialState ={
 
 let profileReducer=(state = InitialState,action)=> {
     switch (action.type) {
+        case CHANGE_NEW_POST_TEXT:
+        {
+           return  {...state,
+                newPostText: action.NewText};
+        }
         case ADD_POST:
         {
             let NewPost = {
@@ -18,14 +23,10 @@ let profileReducer=(state = InitialState,action)=> {
                 kartinka: "https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg",
                 likes: 12
             };
-            state.postData.push(NewPost);
-            state.newPostText = '';
-            return state;
-        }
-        case CHANGE_NEW_POST_TEXT:
-        {
-            state.newPostText = action.NewText;
-            return state;
+            return  {...state,
+                newPostText:'',
+                postData:[...state.postData,NewPost],
+            };
         }
         default: return state;
 
