@@ -6,10 +6,9 @@ import usersReducer from "./usersReducer";
 let reducers = combineReducers(
     {ProfilePage:profileReducer,
             MassagePage:dialogsReducer,
-             UsersPage: usersReducer
+            UsersPage: usersReducer
     }
     );
-
-
+;
 let store = createStore(reducers);
 export default store;
