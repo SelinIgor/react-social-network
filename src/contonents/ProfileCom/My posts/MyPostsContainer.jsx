@@ -1,12 +1,13 @@
 import React from 'react';
-import {addPostActionCreator, changeNewPostTextActionCreator} from "../../../redux/profileReducer";
+import {addLikeAC, addPostActionCreator, changeNewPostTextActionCreator} from "../../../redux/profileReducer";
 import Myposts from "./MyPosts";
 import {connect} from "react-redux";
 
 const mapStateToProps = (state) =>{
    return {
        postData: state.ProfilePage.postData,
-       newPostText:state.ProfilePage.newPostText
+       newPostText:state.ProfilePage.newPostText,
+       buttonDef:state.ProfilePage.buttonDef
    }
 }
 const mapDispatchToProps = (dispatch) =>{
@@ -16,6 +17,9 @@ const mapDispatchToProps = (dispatch) =>{
           dispatch(action)},
        addPost:()=>{
          dispatch(addPostActionCreator());
+       },
+       addLike:(postId)=>{
+          dispatch(addLikeAC(postId))
        }
    }
 }
