@@ -10,18 +10,26 @@
     padding: 3px;
 
 }
-.nav{
+.menu li a{
     color: black;
+    text-decoration: none;
+    padding: 8px 11px;
+    align-self: center;
+    border-radius: 5px;
 }
-a:hover{
-    font-weight: bold;
+.menu a{
+    transition: background 0.3s linear;
+}
+
+.menu a:hover{
+    background: white;
 }
 .active{
     color: black;
     padding: 3px;
     font-weight: bold;
-    border-bottom: 2px solid black;
 }
-.exit{
-    float: right;
+.container{
+    display: flex;
+    justify-content: space-between;
 }
