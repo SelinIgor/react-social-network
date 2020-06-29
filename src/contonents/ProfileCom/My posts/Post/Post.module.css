@@ -17,3 +17,13 @@
 .avatar{
     margin-right: 10px;
 }
+.shareButton{
+    border: none;
+    padding: 2px 5px;
+}
+.shareButton:hover{
+    background-color: mediumpurple;
+}
+.shareButton:active{
+    font-weight: bold;
+}

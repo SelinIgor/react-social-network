@@ -7,10 +7,10 @@ const ProfileInfo =()=> {
             <img src={"https://focus.ua/storage/pub/images/2017/2615387.jpg"} className={s.avatar}/>
             <div className={s.userName}>Igor Selin</div>
         </div>
-    <div>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцам
-        и Lorem Ipsum в 60-х годах и, в более недавнее время, программы
-        электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, dolorum eligendi enim in nobis quae rem rerum tempora. Aut distinctio eaque esse eveniet incidunt molestias possimus quibusdam. Adipisci deserunt dolores ea earum, eos laborum non quaerat qui tempora unde? Dolores minima modi mollitia nam pariatur perferendis quam velit vero voluptatibus?</div>
+    <hr className={s.line}/>
         </div>
+
     </div>);
 }
 export default ProfileInfo;

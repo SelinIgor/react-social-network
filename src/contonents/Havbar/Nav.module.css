@@ -1,35 +1,26 @@
 .Nav{
-    margin: 5px 0px 5px 0px;
-    grid-area: n;
-    background: #4a6da7;
+  padding: 10px 10px;
+    background-color: #4a6da7;
+    font-weight: 700;
+
 }
-.item{
+
+.nav {
+    color: #000;
     text-align: center;
-    display: inline; /* Отображать как строчный элемент */
-    margin-right: 10px;
-    padding: 3px;
-
+    padding: 14px 7px;
+    font-size: 15px;
+    transition: 0.3s linear color;
 }
-.menu li a{
-    color: black;
-    text-decoration: none;
-    padding: 8px 11px;
-    align-self: center;
-    border-radius: 5px;
-}
-.menu a{
-    transition: background 0.3s linear;
-}
-
-.menu a:hover{
-    background: white;
+.nav:hover{
+    border-bottom: 2px solid black;
+    color: lavender;
 }
 .active{
-    color: black;
-    padding: 3px;
-    font-weight: bold;
+
+    color: lavender;
 }
-.container{
+.topNav{
     display: flex;
     justify-content: space-between;
 }

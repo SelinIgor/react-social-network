@@ -1,15 +1,16 @@
+
+
 .conteiner{
- margin: 50px 200px;
+
+width: 600px;
+    margin: 50px auto;
 }
 .background{
 
     background-image: url("https://img.freepik.com/free-vector/abstract-technology-particle-background_52683-25766.jpg?size=626&ext=jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 250px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+
     padding-left: 25px;
 
 }

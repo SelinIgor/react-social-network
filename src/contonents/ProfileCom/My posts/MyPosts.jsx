@@ -20,15 +20,15 @@ props.addPost();
    return (
         <div className={a.MainConteiner}>
             <div className={a.newPost}>
-        <div>
+        <div className={a.myPost}>
             My posts
         </div>
             <div>
                <div>
-       <textarea onChange={onPostChange} ref={NewPostElement} value={props.newPostText}/>
+       <textarea onChange={onPostChange} ref={NewPostElement} placeholder={props.newPostText} className={a.textarea}/>
                </div>
                 <div>
-                <button onClick={addingPost}> Share</button>
+                <button onClick={addingPost} className={a.shareButton}> Share</button>
                 </div>
 
                 </div>

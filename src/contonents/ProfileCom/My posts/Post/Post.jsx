@@ -5,7 +5,9 @@ const  Post= (props) => {
     debugger;
     return (
         props.postData.map(u => <div key={u.id}>
+
         <div className={a.item}>
+
             <div className={a.container}>
             <div className={a.avatar}>
             <img src={u.kartinka}/>
@@ -15,12 +17,12 @@ const  Post= (props) => {
             </div>
             </div>
             <span>
-                likes =  {u.likes}<button onClick={() => {
+               {u.likes} likes <button className={a.shareButton} onClick={() => {
                 props.addLike(u.id)
             }}>
                 {u.liked
-                    ? 'dislike'
-                    : 'like'
+                    ? <i className="fas fa-heart"> </i>
+                    :<i class="far fa-heart"> </i>
                 }
 
                 
