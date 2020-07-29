@@ -1,16 +1,17 @@
-.active{
-    font-weight: bold;
-}
+
 .dialogs{
-    padding: 10px;
 
     display: flex;
     flex-direction: row;
-    margin: 5px;
-    border: 2px solid lightslategrey;
+    border: 3px solid silver;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    font-size: 15px;
+
 
 
 }
+
 .photo {
 
 
@@ -32,5 +33,15 @@
     color: black;
     font-size: 18px;
     margin: auto 0 auto 3px;
+    transition: 0.2s linear color;
 
+}
+.nameDialog:hover{
+    color: lavender;
+    border-bottom: 2px solid black;
+}
+
+.active{
+    border-bottom: 2px solid black;
+    font-weight: bold;
 }

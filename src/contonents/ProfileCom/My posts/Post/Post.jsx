@@ -2,7 +2,6 @@ import React from 'react';
 import a from './Post.module.css';
 
 const  Post= (props) => {
-    debugger;
     return (
         props.postData.map(u => <div key={u.id}>
 

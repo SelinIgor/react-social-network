@@ -2,13 +2,8 @@ import React, {createRef} from 'react';
 import s from './Masseges.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MassegeItem/MassegeItem";
-import {changeNewSmsTextActionCreator, sendSmsActionCreator} from "../../redux/dialogsReducer";
-
-
-
 
 const Masseges = (props)=> {
-debugger;
     let NewMassage = createRef();
     let SendSms = () =>{
     props.sendSms();
@@ -28,12 +23,12 @@ props.changeNewSmsText(edsms);
             {MassegesElements}
             <div className={s.inputMassage}>
                 <div>
-    <textarea ref={NewMassage} value={props.newTextSms} onChange={OnSmsChange}>
+    <textarea className={s.textarea} ref={NewMassage} value={props.newTextSms} onChange={OnSmsChange}>
 
     </textarea>
                 </div>
                 <div>
-                    <button onClick={SendSms}> Send</button>
+                    <button onClick={SendSms} className={s.shareButton}> Send</button>
 
                 </div>
 

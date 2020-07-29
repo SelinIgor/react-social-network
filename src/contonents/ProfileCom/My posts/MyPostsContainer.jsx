@@ -10,23 +10,21 @@ const mapStateToProps = (state) =>{
        buttonDef:state.ProfilePage.buttonDef
    }
 }
-const mapDispatchToProps = (dispatch) =>{
-   return {
-       changeNewPostText:(edtext)=>{
-           let action = changeNewPostTextActionCreator(edtext);
-          dispatch(action)},
-       addPost:()=>{
-         dispatch(addPostActionCreator());
-       },
-       addLike:(postId)=>{
-          dispatch(addLikeAC(postId))
-       }
-   }
-}
+// const mapDispatchToProps = (dispatch) =>{
+//    return {
+//        changeNewPostText:(edtext)=>{
+//            let action = changeNewPostTextActionCreator(edtext);
+//           dispatch(action)},
+//        addPost:()=>{
+//          dispatch(addPostActionCreator());
+//        },
+//        addLike:(postId)=>{
+//           dispatch(addLikeAC(postId))
+//        }
+//    }
+// }
 
 
-const MyPostsContainer = connect(mapStateToProps,mapDispatchToProps)(Myposts);
-
-
+const MyPostsContainer = connect(mapStateToProps,{changeNewPostText:changeNewPostTextActionCreator, addPost:addPostActionCreator, addLike:addLikeAC})(Myposts);
 
 export default MyPostsContainer;

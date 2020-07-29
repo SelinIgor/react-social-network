@@ -4,6 +4,11 @@
 
 width: 600px;
     margin: 50px auto;
+    border-left: 2px solid #4a6da7;
+    border-right: 2px solid #4a6da7;
+    padding: 10px;
+
+
 }
 .background{
 
@@ -12,6 +17,7 @@ width: 600px;
     background-size: cover;
 
     padding-left: 25px;
+    margin-bottom: 10px;
 
 }
 .avatar{

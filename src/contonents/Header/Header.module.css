@@ -1,6 +1,7 @@
 .Header{
     grid-area: h;
     background: #4a6da7;
+    padding: 10px 10px;
 }
 .Header img{
     max-height: 50px;
@@ -15,4 +16,22 @@
     margin-left: 5px;
     font-size: 20px;
     font-weight: 700;
+}
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+.authBlock a{
+    color: #000;
+    text-align: center;
+    padding: 14px 7px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s linear color;
+}
+.authBlock a:hover{
+    color: lavender;
 }

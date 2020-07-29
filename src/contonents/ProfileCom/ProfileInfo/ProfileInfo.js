@@ -1,13 +1,33 @@
 import s from "./ProfileInfo.module.css";
 import React from "react";
-const ProfileInfo =()=> {
-    return(<div >
+import Preloader from "../../common/Preloader/Preloader";
+const ProfileInfo =(props)=> {
+if(!props.profile){
+    return <Preloader/>
+}
+    return(
+        <div >
 <div className={s.conteiner}>
         <div className={s.background}>
-            <img src={"https://focus.ua/storage/pub/images/2017/2615387.jpg"} className={s.avatar}/>
-            <div className={s.userName}>Igor Selin</div>
+            {props.profile.photos.small==null?   <img src={"https://i.pinimg.com/originals/a9/d0/96/a9d096ac9430a4f297ed99d42861ae9d.jpg"} className={s.avatar}/>:  <img src={props.profile.photos.small } className={s.avatar}/>}
+            <div className={s.userName}>{props.profile.fullName}</div>
         </div>
-    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, dolorum eligendi enim in nobis quae rem rerum tempora. Aut distinctio eaque esse eveniet incidunt molestias possimus quibusdam. Adipisci deserunt dolores ea earum, eos laborum non quaerat qui tempora unde? Dolores minima modi mollitia nam pariatur perferendis quam velit vero voluptatibus?</div>
+    <div>Description:{props.profile.lookingForAJobDescription===null?<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corporis dolorum est eum ex inventore, ipsa laudantium minus nemo tempora.</p>:props.profile.lookingForAJobDescription}</div>
+    <div> <p> Looking for a job: {props.profile.lookingForAJob===true?<span>yes</span>: <span>no</span>} </p>
+        <div>
+            <p>Contacts:</p>
+        <div>
+            {props.profile.contacts.github===null?<></>:props.profile.contacts.github}</div>
+            <div>{props.profile.contacts.vk===null?<></>:props.profile.contacts.vk}</div>
+            <div>{props.profile.contacts.facebook===null?<></>:props.profile.contacts.facebook}</div>
+            <div>{props.profile.contacts.instagram===null?<></>:props.profile.contacts.instagram}</div>
+            <div>{props.profile.contacts.twitter===null?<></>:props.profile.contacts.twitter}</div>
+            <div>{props.profile.contacts.website===null?<></>:props.profile.contacts.website}</div>
+            <div>{props.profile.contacts.youtube===null?<></>:props.profile.contacts.youtube}</div>
+            <div>{props.profile.contacts.mainLink===null?<></>:props.profile.contacts.mainLink}</div>
+        </div>
+
+    </div>
     <hr className={s.line}/>
         </div>
 
