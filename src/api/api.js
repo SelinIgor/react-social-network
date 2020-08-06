@@ -12,13 +12,27 @@ import * as axios from "axios";
 
 
      export const usersAPI = {
-         getUsers(props){
-             return instance.get(`users?page=${props.currentPage}&count=${props.pageSize}`).then(response => {
+         getUsers(currentPage=1,pageSize=5){
+             return instance.get(`users?page=${currentPage}&count=${pageSize}`).then(response => {
                  return response.data
              });
-         }
-         }
+         },
+         follow(userId){
+            return  instance.post(`follow/${userId}`)
 
+         },
+         unfollow(userId){
+          return  instance.delete(`follow/${userId}`)
+         },
+         setProfile(userId){
+            return  instance.get(`profile/`+ userId)
+         }
+         }
+export const authAPI = {
+   authme(){
+      return  instance.get(`auth/me`)
+   }
+}
 
 
 

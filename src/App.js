@@ -1,26 +1,26 @@
 import React from 'react';
 import './App.css';
-
-import Header from "./contonents/Header/Header";
 import Nav from "./contonents/Havbar/Nav";
-import ProfileCom from "./contonents/ProfileCom/ProfileCom";
 import {Route} from "react-router-dom";
 import Music from "./contonents/Music/Music";
 import MassegesContainer from "./contonents/Masseges/MassegesContainer";
-import Users from "./contonents/Users/Users";
 import UsersContainer from "./contonents/Users/UsersContainer";
+import ProfileComContainer from "./contonents/ProfileCom/ProfileComContainer";
+import HeaderContainer from "./contonents/Header/HeaderContainer";
+import Loginpage from "./contonents/login/Loginpage";
 
 
-const App = (props)=> {
+const App = ()=> {
     return (
             <div className="app-wrapper">
-                <Header/>
+                <HeaderContainer/>
                 <Nav/>
                 <div className="app-wrapper-content">
                     <Route path='/masseges' render={()=><MassegesContainer/>}/>
-                    <Route path="/profileCom" render={()=><ProfileCom store={props.store} />}/>
+                    <Route path="/profileCom/:userId?" render={()=><ProfileComContainer/>}/>
                     <Route path='/users' render={()=><UsersContainer/>}/>
                     <Route path="/music" component={Music}/>
+                    <Route path='/login' render={()=><Loginpage/>}/>
                 </div>
             </div>
     );

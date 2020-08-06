@@ -3,7 +3,7 @@
     background: #4a6da7;
     padding: 10px 10px;
 }
-.Header img{
+.logoConteiner img{
     max-height: 50px;
 }
 .logoConteiner{
@@ -11,6 +11,8 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 20px;
+
 }
 .nameLogo{
     margin-left: 5px;
@@ -20,9 +22,7 @@
 .headerContainer{
     display: flex;
     justify-content: space-between;
-    text-align: center;
-    align-items: center;
-    align-content: center;
+
 }
 .authBlock a{
     color: #000;
@@ -34,4 +34,7 @@
 }
 .authBlock a:hover{
     color: lavender;
+}
+.authBlock img{
+    max-height: 50px;
 }

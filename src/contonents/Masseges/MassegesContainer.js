@@ -3,11 +3,12 @@ import React, {createRef} from 'react';
 import {changeNewSmsTextActionCreator, sendSmsActionCreator} from "../../redux/dialogsReducer";
 import Masseges from "./Masseges";
 import {connect} from "react-redux";
+import withAuthRedirect from "../../hoc/withAuthRedirect";
 
 const mapStateToProps = (state) =>{
     return {
         dialogsPage:state.MassagePage,
-        newTextSms:state.MassagePage.newSmsText
+        newTextSms:state.MassagePage.newSmsText,
     }
 }
 const mapDispatchToProps = (dispatch) =>{
@@ -18,9 +19,9 @@ const mapDispatchToProps = (dispatch) =>{
     }
 }
 
+let AuthRedirectComponent = withAuthRedirect(Masseges)
 
 
-
-        const MassegesContainer = connect(mapStateToProps,mapDispatchToProps)(Masseges)
+        const MassegesContainer = connect(mapStateToProps,mapDispatchToProps)(AuthRedirectComponent)
 
         export default MassegesContainer;

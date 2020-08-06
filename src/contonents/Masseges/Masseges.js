@@ -2,8 +2,12 @@ import React, {createRef} from 'react';
 import s from './Masseges.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MassegeItem/MassegeItem";
+import {Redirect} from "react-router-dom";
 
 const Masseges = (props)=> {
+
+
+
     let NewMassage = createRef();
     let SendSms = () =>{
     props.sendSms();
