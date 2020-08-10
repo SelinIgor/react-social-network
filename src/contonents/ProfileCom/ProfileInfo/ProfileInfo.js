@@ -3,6 +3,7 @@ import React from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
 const ProfileInfo =(props)=> {
+    debugger;
 if(!props.profile){
     return <Preloader/>
 }
@@ -15,7 +16,7 @@ if(!props.profile){
         </div>
 
     <div>
-       <ProfileStatus status={"Hi there!"}/>
+       <ProfileStatus updateStatus={props.updateStatus}  status={props.status}/>
     </div>
 
 

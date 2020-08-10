@@ -45,6 +45,6 @@ let mapStateToProps = (state) =>{
     }
 }
 
-export default connect(mapStateToProps,{followingInProgress,getUsers, follow,unfollow})(UsersContainer);
+export default connect(mapStateToProps,{followingInProgress,getUsers,follow,unfollow})(UsersContainer);
 
 

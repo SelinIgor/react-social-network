@@ -2,21 +2,34 @@ import style from "./ProlifeStatus.module.css"
 import React from "react";
 
 class ProfileStatus extends React.Component{
+
     state={
         editMode: false,
-        status: "Hi there"
+        status:this.props.status
     }
-    ActivateEditMode(){
+
+
+    onStatusChange =(e)=>{
+        this.setState({
+            status: e.currentTarget.value
+        })
+    }
+
+
+
+    ActivateEditMode=()=>{
         this.setState({
                 editMode: true
             }
         )
     }
 
-    DeactivateEditMode(){
+    DeactivateEditMode=()=>{
         this.setState({
                 editMode: false
-            }
+        },
+            this.props.updateStatus(this.state.status)
+
         )
     }
 
@@ -26,11 +39,11 @@ class ProfileStatus extends React.Component{
       return <div>
           <div className={style.mainContainer}>
               {!this.state.editMode&& <div>
-                  <span onDoubleClick={this.ActivateEditMode.bind(this)} className={style.statusText}>{this.props.status}</span>
+                  <span onDoubleClick={this.ActivateEditMode} className={style.statusText}>{this.props.status}</span>
               </div>}
               { this.state.editMode&&
               <div>
-                  <input autoFocus={true} onBlur={this.DeactivateEditMode.bind(this)} value={this.props.status}/>
+                  <input onChange={this.onStatusChange} autoFocus={true} onBlur={this.DeactivateEditMode} value={this.state.status}/>
               </div>}
           </div>
 

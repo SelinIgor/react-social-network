@@ -11,7 +11,7 @@ import * as axios from "axios";
      )
 
 
-     export const usersAPI = {
+export const usersAPI = {
          getUsers(currentPage=1,pageSize=5){
              return instance.get(`users?page=${currentPage}&count=${pageSize}`).then(response => {
                  return response.data
@@ -28,10 +28,19 @@ import * as axios from "axios";
             return  instance.get(`profile/`+ userId)
          }
          }
+
 export const authAPI = {
    authme(){
       return  instance.get(`auth/me`)
-   }
+   }}
+
+export const ProfileAPI = {
+        getStatus(userId){
+            return  instance.get(`profile/status/`+ userId)
+        },
+        updateStatus(status){
+            return  instance.put(`profile/status/`,{status})
+        }
 }
 
 
