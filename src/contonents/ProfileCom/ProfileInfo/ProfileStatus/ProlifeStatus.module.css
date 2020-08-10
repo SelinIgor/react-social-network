@@ -1,0 +1,8 @@
+.mainContainer {
+    margin: 15px 0px;
+}
+.statusText{
+    padding: 3px 2px;
+    font-family: Italic;
+    font-weight: 700;
+}
