@@ -1,0 +1,10 @@
+import React from "react";
+export const required = (value) => (value  ?  undefined : 'Required');
+
+
+export function maxLength(max){
+   return function(value) {
+        if(value && value.length > max) return `Must be ${max} characters or less`
+        return undefined}
+
+}

@@ -17,7 +17,7 @@ if(!userId){
     userId = 3;
 }
 this.props.getUserProfile(userId);
-this.props.getProfileStatus(userId)
+this.props.getProfileStatus(userId);
 
 }
 

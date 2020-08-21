@@ -1,22 +1,21 @@
-import React, {createRef} from 'react';
+import React from 'react';
 import s from './Masseges.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MassegeItem/MassegeItem";
-import {Redirect} from "react-router-dom";
+import {Field, reduxForm} from "redux-form";
+import {Element} from "../FormsControls/FormsControls";
+const Textarea = Element("textarea");
+function maxLength(max){
+    return function(value) {
+        if(value && value.length > max) return `Must be ${max} characters or less`
+        return undefined}
 
+}
+const maxLength50 = maxLength(50);
 const Masseges = (props)=> {
-
-
-
-    let NewMassage = createRef();
-    let SendSms = () =>{
-    props.sendSms();
-
+    let addNewMassage = (values) =>{
+    props.sendSms(values.newMassegeBody);
     };
-    let OnSmsChange= () =>{
-let edsms = NewMassage.current.value;
-props.changeNewSmsText(edsms);
-    }
     let MassegesElements = props.dialogsPage.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
     let DislogsElemets = props.dialogsPage.dialogs.map((dialog)=>{return <DialogItem name={dialog.name} id={dialog.id} kartinka={dialog.kartinka}/> });
     return (<div className={s["mainMasseges"]}>
@@ -26,20 +25,21 @@ props.changeNewSmsText(edsms);
         <div className={s.dialogs}>
             {MassegesElements}
             <div className={s.inputMassage}>
-                <div>
-    <textarea className={s.textarea} ref={NewMassage} value={props.newTextSms} onChange={OnSmsChange}>
-
-    </textarea>
-                </div>
-                <div>
-                    <button onClick={SendSms} className={s.shareButton}> Send</button>
-
-                </div>
-
+     <AddReduxMassage onSubmit={addNewMassage} />
             </div>
         </div>
-
-    </div>
+        </div>
         );
         }
+const AddMassage =(props)=>{
+    return(       <form onSubmit={props.handleSubmit}>
+        <Field className={s.textarea} component={Textarea} validate={[maxLength50]} name={"newMassegeBody"} />
+        <div>
+            <button type="submit" className={s.shareButton}> Send</button>
+
+        </div>
+    </form>)
+}
+        const AddReduxMassage = reduxForm({form:"addMassage"})(AddMassage)
+
         export default Masseges;

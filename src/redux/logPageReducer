@@ -1,0 +1,11 @@
+const LOG_IN ="LOG_IN"
+
+
+let logPageReducer = (state=InitialState, action)=>{
+    switch (action.type) {
+        case LOG_IN:{
+
+        }
+    }
+}
+export default logPageReducer;

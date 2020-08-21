@@ -32,7 +32,11 @@ export const usersAPI = {
 export const authAPI = {
    authme(){
       return  instance.get(`auth/me`)
-   }}
+   },
+     logIn(data){
+       return instance.post(`auth/login`, data)
+     }
+     }
 
 export const ProfileAPI = {
         getStatus(userId){
