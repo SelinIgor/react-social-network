@@ -2,29 +2,47 @@ import React from 'react';
 import './App.css';
 import Nav from "./contonents/Havbar/Nav";
 import {Route} from "react-router-dom";
+import  {withRouter} from "react-router-dom";
 import Music from "./contonents/Music/Music";
 import MassegesContainer from "./contonents/Masseges/MassegesContainer";
 import UsersContainer from "./contonents/Users/UsersContainer";
 import ProfileComContainer from "./contonents/ProfileCom/ProfileComContainer";
 import HeaderContainer from "./contonents/Header/HeaderContainer";
 import Loginpage from "./contonents/login/Loginpage";
+import {connect} from "react-redux";
+import {compose} from "redux";
+import {initializeApp} from "./redux/appReducer";
+import Preloader from "./contonents/common/Preloader/Preloader";
 
 
-const App = ()=> {
-    return (
+class App extends React.Component {
+
+    componentDidMount() {
+        this.props.initializeApp();
+    }
+    render() {
+        if(!this.props.initialized){
+            return <Preloader/>
+        }
+        return (
             <div className="app-wrapper">
                 <HeaderContainer/>
                 <Nav/>
                 <div className="app-wrapper-content">
-                    <Route path='/masseges' render={()=><MassegesContainer/>}/>
-                    <Route path="/profileCom/:userId?" render={()=><ProfileComContainer/>}/>
-                    <Route path='/users' render={()=><UsersContainer/>}/>
+                    <Route path='/masseges' render={() => <MassegesContainer/>}/>
+                    <Route path="/profileCom/:userId?" render={() => <ProfileComContainer/>}/>
+                    <Route path='/users' render={() => <UsersContainer/>}/>
                     <Route path="/music" component={Music}/>
-                    <Route path='/login' render={()=><Loginpage/>}/>
+                    <Route path='/login' render={() => <Loginpage/>}/>
                 </div>
             </div>
-    );
-};
+        );
+    }
+}
+const mapStateToProps =(state)=>({
+    initialized: state.appCommon.initialized,
+})
 
-
-export default App;
+export default compose(
+    withRouter,
+connect(mapStateToProps,{initializeApp})) (App);

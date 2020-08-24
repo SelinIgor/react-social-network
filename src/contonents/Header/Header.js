@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Header.module.css';
+import {NavLink} from "react-router-dom";
 const Header = (props)=> {
 
     return (<header className={s.Header}>
@@ -12,9 +13,8 @@ const Header = (props)=> {
 
     <div className={s.authBlock}>
         {
-            props.isAuth? <div> <div> {props.login}</div> <div> { props.photo? props.photo.small:
-                <img src="https://avatarko.ru/img/kartinka/33/multfilm_lyagushka_32117.jpg"/>}</div></div>
-                : <div>Login</div>
+            props.isAuth?<div className={s.nameWithExit}> <div > <div> {props.login}</div></div><a onClick={props.logout}>Exit</a> </div>
+                : <NavLink to={"/login"}>Login</NavLink>
         }
 
     </div>

@@ -15,10 +15,6 @@ const Nav = ()=> {
 
                 <NavLink to="/setting"  className={s.nav} activeClassName={s.active}> Setting</NavLink>
             </div>
-            <div>
-
-                <NavLink to="/exit" activeClassName={s.active} className={s.nav}> Exit</NavLink>
-            </div>
         </div>
         </div>);}
         export default Nav;

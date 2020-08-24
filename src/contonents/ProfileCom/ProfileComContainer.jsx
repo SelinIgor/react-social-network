@@ -14,7 +14,7 @@ constructor(props) {
     componentDidMount() {
     let userId = this.props.match.params.userId;
 if(!userId){
-    userId = 3;
+    userId = this.props.authorizedUserID;
 }
 this.props.getUserProfile(userId);
 this.props.getProfileStatus(userId);
@@ -28,7 +28,8 @@ this.props.getProfileStatus(userId);
 let mapStateToProps =(state) =>{
     return {
         profile: state.ProfilePage.profile,
-        status:state.ProfilePage.status
+        status:state.ProfilePage.status,
+        authorizedUserID:state.auth.id
     }
 }
  export default compose(
