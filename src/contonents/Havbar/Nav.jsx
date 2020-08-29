@@ -5,9 +5,9 @@ const Nav = ()=> {
     return (<div className={s.Nav}>
         <div className={s.topNav}>
             <div>
-                <NavLink to="/ProfileCom" className={s.nav}  activeClassName={s.active}>Profile</NavLink>
+                <NavLink to="/profile" className={s.nav}  activeClassName={s.active}>Profile</NavLink>
 
-                <NavLink to="/Masseges"  className={s.nav} activeClassName={s.active} >Massages</NavLink>
+                <NavLink to="/messages"  className={s.nav} activeClassName={s.active} >Messages</NavLink>
 
                 <NavLink to="/music"  className={s.nav} activeClassName={s.active} >Music</NavLink>
 

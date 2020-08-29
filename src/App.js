@@ -8,7 +8,7 @@ import MassegesContainer from "./contonents/Masseges/MassegesContainer";
 import UsersContainer from "./contonents/Users/UsersContainer";
 import ProfileComContainer from "./contonents/ProfileCom/ProfileComContainer";
 import HeaderContainer from "./contonents/Header/HeaderContainer";
-import Loginpage from "./contonents/login/Loginpage";
+import LoginPage from "./contonents/login/Loginpage";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/appReducer";
@@ -29,11 +29,11 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <Nav/>
                 <div className="app-wrapper-content">
-                    <Route path='/masseges' render={() => <MassegesContainer/>}/>
-                    <Route path="/profileCom/:userId?" render={() => <ProfileComContainer/>}/>
+                    <Route path='/messages' render={() => <MassegesContainer/>}/>
+                    <Route path="/profile/:userId?" render={() => <ProfileComContainer/>}/>
                     <Route path='/users' render={() => <UsersContainer/>}/>
                     <Route path="/music" component={Music}/>
-                    <Route path='/login' render={() => <Loginpage/>}/>
+                    <Route path='/login' render={() => <LoginPage/>}/>
                 </div>
             </div>
         );

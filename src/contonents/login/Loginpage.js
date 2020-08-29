@@ -9,18 +9,18 @@ import styles from "./../FormsControls/FormsControls.module.css"
 const Input = Element("input")
 export const required = (value) => (value  ?  undefined : 'Required');
 const Loginpage = (props) =>{
-    let onSumbit = (value)=>{
+    let onSubmit = (value)=>{
         props.login(value.email,value.password,value.rememberMe)
     }
     if (props.isAuth){
         return (
-            <Redirect to={"/profileCom"}/>
+            <Redirect to={"/profile"}/>
         )
     }
     return(<div>
         <div className={style.textContainer}>
            <div><p className={style.loginText}> LOGIN</p></div>
-          <LoginReduxForm onSubmit={onSumbit}/>
+          <LoginReduxForm onSubmit={onSubmit}/>
 </div>
     </div>)
 };
