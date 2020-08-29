@@ -22,7 +22,8 @@ this.props.getProfileStatus(userId);
 }
 
     render() {
-    return(<ProfileCom {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus}/>)
+    //{...this.props} remove
+    return(<ProfileCom  profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus}/>)
     }
 }
 let mapStateToProps =(state) =>{

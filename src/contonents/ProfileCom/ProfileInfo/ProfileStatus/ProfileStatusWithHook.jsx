@@ -1,5 +1,5 @@
 import style from "./ProlifeStatus.module.css"
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 const ProfileStatusWithHook =(props)=> {
     const [editMode, setEditMode] = useState(false);
@@ -16,6 +16,9 @@ const ProfileStatusWithHook =(props)=> {
     function onStatusChange(e) {
         setStatus(e.currentTarget.value)
     }
+    useEffect(()=>{
+        setStatus(props.status)
+    },[props.status])
 
     return <div>
             <div className={style.mainContainer}>
