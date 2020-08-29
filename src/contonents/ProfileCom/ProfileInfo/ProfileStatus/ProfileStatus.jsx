@@ -2,11 +2,11 @@ import style from "./ProlifeStatus.module.css"
 import React from "react";
 
 class ProfileStatus extends React.Component{
-
     state={
         editMode: false,
         status:this.props.status
     }
+
     onStatusChange =(e)=>{
         this.setState({
             status: e.currentTarget.value
@@ -36,8 +36,6 @@ componentDidUpdate(prevProps, prevState, snapshot) {
 }
 
     render() {
-
-
       return <div>
           <div className={style.mainContainer}>
               {!this.state.editMode&& <div>
