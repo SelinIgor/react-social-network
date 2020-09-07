@@ -25,7 +25,7 @@ export const usersAPI = {
           return  instance.delete(`follow/${userId}`)
          },
          setProfile(userId){
-            return  instance.get(`profile/`+ userId)
+            return  instance.get(`profile/${userId}`)
          }
          }
 
@@ -48,6 +48,9 @@ export const ProfileAPI = {
         updateStatus(status){
             return  instance.put(`profile/status/`,{status})
         },
+    updatePhoto(photo){
+            return instance.put(` /profile/photo`,{photo})
+    },
 
 }
 

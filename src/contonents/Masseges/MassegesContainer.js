@@ -11,14 +11,14 @@ const mapStateToProps = (state) =>{
         dialogsPage:state.MassagePage,
 
     }
-}
+};
 const mapDispatchToProps = (dispatch) =>{
     return {
         sendSms:(newMassage)=>{dispatch(sendSmsActionCreator(newMassage))},
 
 
     }
-}
+};
 export default compose(
     connect(mapStateToProps,mapDispatchToProps),
     withAuthRedirect

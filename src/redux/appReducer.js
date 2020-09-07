@@ -22,6 +22,7 @@ export let initialize = ()=>{
 };
 export const initializeApp = () => (dispatch)=>{
 const promise = dispatch(getUserAuthData());
+//const promiseTheme = dispatch(getTheme());
 Promise.all([promise]).then(()=>{
     dispatch(initialize())
 })

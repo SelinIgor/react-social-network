@@ -9,6 +9,7 @@ import {compose} from "redux";
 
 class ProfileComContainer extends React.Component{
 constructor(props) {
+
     super(props);
 }
     componentDidMount() {
@@ -18,7 +19,6 @@ if(!userId){
 }
 this.props.getUserProfile(userId);
 this.props.getProfileStatus(userId);
-
 }
 
     render() {

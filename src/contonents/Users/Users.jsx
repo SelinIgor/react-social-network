@@ -4,6 +4,7 @@ import userPhoto from "../../datas/img/user.png";
 import {NavLink} from "react-router-dom";
 
 let Users = (props) =>{
+    debugger;
     let totalPagesCount = props.totalUsersCount/props.pageSize;
     let pages =[];
     //взяв і штучно обмежив кількість
@@ -26,7 +27,7 @@ let Users = (props) =>{
                 <div className={a.Container}>
                     <div>
 
-                        <div><NavLink to={"/profileCom/"+u.id}>
+                        <div><NavLink to={"/profile/"+u.id}>
                             <img className={a.userImg} src={u.photos.small != null ? u.photos.small : userPhoto}/>
                         </NavLink>
                         </div>
