@@ -38,18 +38,20 @@ class UsersContainer extends React.Component{
                       follow={this.props.follow}
                    followingInProgress={this.props.followingInProgress}
                    followProgress={this.props.followProgress}
+                   portionSize={this.props.portionSize}
         > </Users>
             </>
     }
 }
 let mapStateToProps = (state) =>{
     return {
-       users: getAllUsers(state),
-        pageSize: getPageSize(state),
-        totalUsersCount: getTotalUsersCount(state),
+       users: state.UsersPage.users,
+        pageSize: state.UsersPage.pageSize,
+        totalUsersCount:state.UsersPage.totalUsersCount,
         currentPage:getCurrentPage(state),
         isFetching: getIsFetching(state),
-        followProgress:getFollowProgress(state)
+        followProgress:getFollowProgress(state),
+        portionSize:state.UsersPage.portionSize
     }
 }
 

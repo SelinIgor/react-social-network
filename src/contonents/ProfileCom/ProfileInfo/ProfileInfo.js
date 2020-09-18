@@ -16,7 +16,7 @@ if(!props.profile){
         </div>
 
     <div>
-       <ProfileStatusWithHook updateStatus={props.updateStatus}  status={props.status}/>
+       <ProfileStatus updateStatus={props.updateStatus}  status={props.status}/>
     </div>
 
 

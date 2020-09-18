@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Nav from "./contonents/Havbar/Nav";
-import {Route} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import  {withRouter} from "react-router-dom";
 import Music from "./contonents/Music/Music";
 import MassegesContainer from "./contonents/Masseges/MassegesContainer";
@@ -9,10 +9,11 @@ import UsersContainer from "./contonents/Users/UsersContainer";
 import ProfileComContainer from "./contonents/ProfileCom/ProfileComContainer";
 import HeaderContainer from "./contonents/Header/HeaderContainer";
 import LoginPage from "./contonents/login/Loginpage";
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/appReducer";
 import Preloader from "./contonents/common/Preloader/Preloader";
+import store from "./redux/redux-store";
 
 
 class App extends React.Component {
@@ -43,6 +44,17 @@ const mapStateToProps =(state)=>({
     initialized: state.appCommon.initialized,
 })
 
-export default compose(
+const AppContainer = compose(
     withRouter,
 connect(mapStateToProps,{initializeApp})) (App);
+const MainApp = (props)=>{
+    return(<BrowserRouter>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+              integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+              crossOrigin="anonymous"/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Notable&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"/>
+        <Provider store={store}>
+            <AppContainer/>
+        </Provider> </BrowserRouter>)
+}
+export default MainApp

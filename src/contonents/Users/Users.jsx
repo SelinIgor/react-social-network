@@ -1,26 +1,45 @@
-import React from "react";
+import React, {useState} from "react";
 import a from "./Users.module.css";
 import userPhoto from "../../datas/img/user.png";
 import {NavLink} from "react-router-dom";
 
-let Users = (props) =>{
-    debugger;
-    let totalPagesCount = props.totalUsersCount/props.pageSize;
-    let pages =[];
-    //взяв і штучно обмежив кількість
-    for (let i=1;i<=50;i++){
-
-            pages.push(i)
-
+let Users = (props,{portionSize=10}) => {
+    let totalPagesCount = Math.ceil(props.totalUsersCount/props.pageSize);
+    let pages = [];
+    for (let i = 1; i <= totalPagesCount; i++) {
+        pages.push(i)
     }
+
+    let portionCount = Math.ceil(totalPagesCount / portionSize);
+    let [portionNumber, setPortionNumber] = useState(1)
+    let leftBorder = (portionNumber - 1) * portionSize + 1;
+    let rightBorder = portionNumber * portionSize;
+    let newCurrentPage = (leftBorder)=>{
+        debugger;
+        props.onClickChanged(leftBorder+portionSize);
+    }
+    let prevCurrentPage = (leftBorder)=>{
+
+        props.onClickChanged(leftBorder-portionSize);
+    }
+
     return  <div>
+        <div className={a.paginator}>
+        {portionNumber>1&& <button onClick={()=>{setPortionNumber(portionNumber-1);prevCurrentPage(leftBorder)}}>PREV</button>}
         <div className={a.buttonsBlock}>
             {
-                pages.map(currentPage=>
-<button  onClick={()=>props.onClickChanged(currentPage)}
-        className={props.currentPage===currentPage && a.selectedPage}>{currentPage}
+                pages.filter(p=>p>=leftBorder && p<=rightBorder)
+                    .map(p=>
+<button  onClick={()=>props.onClickChanged(p)}
+        className={props.currentPage===p && a.selectedPage} key={p}>{p}
 </button>)
             }
+
+        </div>
+        { portionCount > portionNumber &&
+        <button onClick={() => { setPortionNumber(portionNumber + 1);newCurrentPage(leftBorder) }}>NEXT</button>
+
+        }
         </div>
         {
             props.users.map(u => <div key={u.id}>
@@ -28,7 +47,7 @@ let Users = (props) =>{
                     <div>
 
                         <div><NavLink to={"/profile/"+u.id}>
-                            <img className={a.userImg} src={u.photos.small != null ? u.photos.small : userPhoto}/>
+                            <img alt={"user's photo"} className={a.userImg} src={u.photos.small != null ? u.photos.small : userPhoto}/>
                         </NavLink>
                         </div>
                         <div>
