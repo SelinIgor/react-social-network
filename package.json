@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://selinigor.github.io/react-social-network/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -15,10 +16,8 @@
     "redux": "^4.0.5",
     "redux-form": "^8.3.6",
     "redux-thunk": "^2.3.0",
-
-    "homepage": "https://selinigor.github.io/react-social-network",
-
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "yarn": "^1.22.5"
   },
   "scripts": {
     "start": "react-scripts start",
