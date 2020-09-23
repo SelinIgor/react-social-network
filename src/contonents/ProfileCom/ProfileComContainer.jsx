@@ -30,8 +30,8 @@ refreshProfile(){
     }
 
     render() {
-    //{...this.props} remove
-    return(<ProfileCom savePhoto={this.props.savePhoto}  profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus} authorizedUserID={this.props.authorizedUserID}/>)
+    return(<ProfileCom savePhoto={this.props.savePhoto}  profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus}
+                       isOwner={this.props.match.params.userId} authorizedUserID={this.props.authorizedUserID}/>)
     }
 }
 let mapStateToProps =(state) =>{
