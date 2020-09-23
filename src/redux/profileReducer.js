@@ -4,6 +4,7 @@ const ADD_LIKE ="ADD_LIKE";
 
 const SET_USER_PROFILE='SET_USER_PROFILE';
 const SET_PROFILE_STATUS='SET_PROFILE_STATUS';
+const SAVE_PHOTO = 'SAVE_PHOTO'
 let InitialState ={
    profile: null,
     status:null,
@@ -54,6 +55,12 @@ let profileReducer=(state = InitialState,action)=> {
                status: action.status
            }
         }
+        case SAVE_PHOTO:{
+            return {
+                ...state,
+                profile: {...state.profile, photos: action.photos}
+            }
+        }
 
 
         default: return state;
@@ -84,6 +91,9 @@ export const setProfileStatus =(status)=>{
     return{type: SET_PROFILE_STATUS, status }
 
 }
+export const savePhotoSuccess = (photos)=>{
+    return{type:SAVE_PHOTO, photos}
+}
 export const getProfileStatus = (userId) =>{
     return(dispatch)=>{
         ProfileAPI.getStatus(userId).then(response=>{
@@ -99,5 +109,12 @@ export const updateStatus =(status)=>{
             }
         })
     }
+}
+export const savePhoto =(file)=> (dispatch)=> {
+        ProfileAPI.savePhoto(file).then(response =>{
+        if (response.data.resultCode === 0) {
+            dispatch(savePhotoSuccess(response.data.data.photos))
+        }})
+
 }
 export default profileReducer;

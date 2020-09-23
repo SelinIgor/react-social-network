@@ -2,16 +2,23 @@ import s from "./ProfileInfo.module.css";
 import React from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
-import ProfileStatusWithHook from "./ProfileStatus/ProfileStatusWithHook";
 const ProfileInfo =(props)=> {
 if(!props.profile){
     return <Preloader/>
 }
+
+    function onPhotoSelected(e) {
+        if(e.target.files.length){
+            props.savePhoto(e.target.files[0])
+        }
+    }
+
     return(
         <div >
 <div className={s.conteiner}>
         <div className={s.background}>
             {props.profile.photos.small==null?   <img src={"https://i.pinimg.com/originals/a9/d0/96/a9d096ac9430a4f297ed99d42861ae9d.jpg"} className={s.avatar}/>:  <img src={props.profile.photos.small } className={s.avatar}/>}
+          <div>  {props.authorizedUserID && <input type={"file"} onChange={onPhotoSelected}/>}</div>
             <div className={s.userName}>{props.profile.fullName}</div>
         </div>
 
