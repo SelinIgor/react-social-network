@@ -1,8 +1,10 @@
 import s from "./ProfileInfo.module.css";
-import React from "react";
+import React, {useState} from "react";
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus/ProfileStatus";
+import ProfileDataForm from "./ProfileFormData";
 const ProfileInfo =(props)=> {
+    const [editMode,setEditMode]= useState(false)
 if(!props.profile){
     return <Preloader/>
 }
@@ -11,6 +13,36 @@ if(!props.profile){
         if(e.target.files.length){
             props.savePhoto(e.target.files[0])
         }
+    }
+    const Contact = ({contactTitle, contactValue})=>{
+    return<div> {contactTitle}:{contactValue}</div>
+    }
+
+   const onSubmit = (profileData)=>{
+       props.updateProfile(profileData)
+       setEditMode(false)
+   }
+
+const ProfileData = (props) =>{
+    return(    <div> <p> Looking for a job: {props.profile.lookingForAJob===true?<span>yes</span>: <span>no</span>} </p>
+        <div>Description:{props.profile.lookingForAJobDescription===null?<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corporis dolorum est eum ex inventore, ipsa laudantium minus nemo tempora.</p>:props.profile.lookingForAJobDescription}</div>
+        <div>
+
+            <p>Contacts:</p>
+            {  Object.keys(props.profile.contacts).map(key=>{
+                return <Contact contactTitle={key} contactValue={props.profile.contacts[key]}/>
+            })
+
+            })
+
+
+        </div>
+
+    </div>)
+}
+
+    function onClick() {
+     return    setEditMode(true)
     }
 
     return(
@@ -25,25 +57,10 @@ if(!props.profile){
     <div>
        <ProfileStatus updateStatus={props.updateStatus}  status={props.status}/>
     </div>
+    {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit}/>:<div><ProfileData profile={props.profile}/><button onClick={onClick}>edit</button></div>}
 
 
 
-    <div>Description:{props.profile.lookingForAJobDescription===null?<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corporis dolorum est eum ex inventore, ipsa laudantium minus nemo tempora.</p>:props.profile.lookingForAJobDescription}</div>
-    <div> <p> Looking for a job: {props.profile.lookingForAJob===true?<span>yes</span>: <span>no</span>} </p>
-        <div>
-            <p>Contacts:</p>
-        <div>
-            {props.profile.contacts.github===null?<></>:props.profile.contacts.github}</div>
-            <div>{props.profile.contacts.vk===null?<></>:props.profile.contacts.vk}</div>
-            <div>{props.profile.contacts.facebook===null?<></>:props.profile.contacts.facebook}</div>
-            <div>{props.profile.contacts.instagram===null?<></>:props.profile.contacts.instagram}</div>
-            <div>{props.profile.contacts.twitter===null?<></>:props.profile.contacts.twitter}</div>
-            <div>{props.profile.contacts.website===null?<></>:props.profile.contacts.website}</div>
-            <div>{props.profile.contacts.youtube===null?<></>:props.profile.contacts.youtube}</div>
-            <div>{props.profile.contacts.mainLink===null?<></>:props.profile.contacts.mainLink}</div>
-        </div>
-
-    </div>
     <hr className={s.line}/>
         </div>
 

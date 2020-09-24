@@ -8,7 +8,7 @@ const ProfileCom = (props) => {
         <div className={a.content}>
             <ProfileInfo profile={props.profile} status={props.status}
                          updateStatus={props.updateStatus} authorizedUserID={!!props.authorizedUserID}
-            savePhoto={props.savePhoto}/>
+            savePhoto={props.savePhoto} updateProfile={props.updateProfile}/>
             <MyPostsContainer/>
 
         </div>);
