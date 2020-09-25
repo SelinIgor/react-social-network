@@ -24,7 +24,9 @@ if(!props.profile){
    }
 
 const ProfileData = (props) =>{
-    return(    <div> <p> Looking for a job: {props.profile.lookingForAJob===true?<span>yes</span>: <span>no</span>} </p>
+    return(    <div>
+        <p> About user: {props.profile.aboutMe} </p>
+        <p> Looking for a job: {props.profile.lookingForAJob===true?<span>yes</span>: <span>no</span>} </p>
         <div>Description:{props.profile.lookingForAJobDescription===null?<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corporis dolorum est eum ex inventore, ipsa laudantium minus nemo tempora.</p>:props.profile.lookingForAJobDescription}</div>
         <div>
 
@@ -33,7 +35,7 @@ const ProfileData = (props) =>{
                 return <Contact contactTitle={key} contactValue={props.profile.contacts[key]}/>
             })
 
-            })
+            }
 
 
         </div>

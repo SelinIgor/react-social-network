@@ -1,4 +1,5 @@
 import {ProfileAPI, usersAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 const ADD_POST = 'ADD_POST';
 const ADD_LIKE ="ADD_LIKE";
 
@@ -123,6 +124,10 @@ export const updateProfile =(profile)=>{
         ProfileAPI.updateProfile(profile).then(response=>{
             if(response.data.resultCode===0){
                 dispatch(getUserProfile(userId))
+            }
+            else {
+                const message = (response.data.messages.length>0)? response.data.messages[0]: "Something wrong"
+                dispatch(stopSubmit("profileData",{_error:message}));
             }
         })
     }
