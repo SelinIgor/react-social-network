@@ -15,8 +15,8 @@ const ProfileDataForm = (props)=> {
            Are you looking for a job? <Field type="checkbox" name="lookingForAJob" placeholder="" component={Input} />
           Please tell us about your skills  <Field type="text" name="lookingForAJobDescription" placeholder="" component={Input} />
           You in social networks
-            {Object.keys(props.profile.contacts).map(key=>{
-                return <Field type="text" name={"contacts."+key} placeholder={key} component={Input} />
+            {Object.entries(props.profile.contacts).map(([key,value])=>{
+                return <Field type="text" name={'contacts.'+key} placeholder={key} component={Input} />
             })
 
             }
