@@ -5,7 +5,8 @@ import * as axios from "axios";
              withCredentials: true,
              baseURL: "https://social-network.samuraijs.com/api/1.0/",
              headers:{
-                 "API-KEY":"14afbc17-5def-47a5-befe-a2e4e52003d8"
+                 "API-KEY":"14afbc17-5def-47a5-befe-a2e4e52003d8",
+
              }
          }
      )
