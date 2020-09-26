@@ -1,8 +1,8 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
 import {Element} from "../../FormsControls/FormsControls";
-import {required} from "../../login/Loginpage";
 import styles from "../../FormsControls/FormsControls.module.css";
+import {required} from "../../../validators/validators";
 const Input = Element("input")
 const ProfileDataForm = (props)=> {
 
@@ -10,7 +10,7 @@ const ProfileDataForm = (props)=> {
         <form onSubmit={props.handleSubmit}>
             {(props.error)?<div className={styles.spanError}>{props.error}</div>:undefined}
            <div> <button type={"submit"}>save</button></div>
-            About me: <Field type="text" name="aboutMe" placeholder="" component={Input} />
+            About me: <Field type="text" name="aboutMe" placeholder="" component={Input} validate={required} />
             Your fullname <Field type="text" name="fullName" placeholder="" component={Input} />
            Are you looking for a job? <Field type="checkbox" name="lookingForAJob" placeholder="" component={Input} />
           Please tell us about your skills  <Field type="text" name="lookingForAJobDescription" placeholder="" component={Input} />
