@@ -2,7 +2,7 @@ import React from 'react';
 import ProfileCom from "./ProfileCom";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
-import {getProfileStatus, getUserProfile, savePhoto, updateProfile, updateStatus} from "../../redux/profileReducer";
+import {getProfileStatus, getUserProfile, savePhoto, updateStatus} from "../../redux/profileReducer";
 import withAuthRedirect from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 
@@ -30,12 +30,8 @@ refreshProfile(){
     }
 
     render() {
-    //{...this.props} remove
-    return(<ProfileCom savePhoto={this.props.savePhoto}  profile={this.props.profile} status={this.props.status}
-                       updateStatus={this.props.updateStatus} authorizedUserID={this.props.authorizedUserID}
-                       updateProfile={this.props.updateProfile}
-
-    />)
+    return(<ProfileCom savePhoto={this.props.savePhoto}  profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus}
+                       isOwner={this.props.match.params.userId} authorizedUserID={this.props.authorizedUserID}/>)
     }
 }
 let mapStateToProps =(state) =>{
@@ -46,7 +42,7 @@ let mapStateToProps =(state) =>{
     }
 }
  export default compose(
-    connect (mapStateToProps,{getUserProfile,getProfileStatus,updateStatus,savePhoto,updateProfile}),
+    connect (mapStateToProps,{getUserProfile,getProfileStatus,updateStatus,savePhoto}),
     withRouter,
     withAuthRedirect
 )(ProfileComContainer)

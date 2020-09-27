@@ -5,8 +5,7 @@ import * as axios from "axios";
              withCredentials: true,
              baseURL: "https://social-network.samuraijs.com/api/1.0/",
              headers:{
-                 "API-KEY":"14afbc17-5def-47a5-befe-a2e4e52003d8",
-
+                 "API-KEY":"14afbc17-5def-47a5-befe-a2e4e52003d8"
              }
          }
      )
@@ -34,8 +33,8 @@ export const authAPI = {
    authme(){
       return  instance.get(`auth/me`)
    },
-    login(email,password,rememberMe, captcha=null){
-        return instance.post(`/auth/login`, {email,password,rememberMe,captcha})
+    login(email,password,rememberMe){
+        return instance.post(`/auth/login`, {email,password,rememberMe})
     },
     logout(){
        return instance.delete(`/auth/login`)
@@ -58,18 +57,8 @@ export const ProfileAPI = {
                 }
             })
     },
-    updateProfile(profile){
-        return  instance.put(`profile`,profile)
-    }
-
 
 }
-export const SecurityAPI = {
-         getCaptcha(){
-             return instance.get(`security/get-captcha-url`);
-         }
-}
-
 
 
 

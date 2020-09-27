@@ -10,7 +10,7 @@ const Input = Element("input")
 export const required = (value) => (value  ?  undefined : 'Required');
 const Loginpage = (props) =>{
     let onSubmit = (value)=>{
-        props.login(value.email,value.password,value.rememberMe, value.captcha)
+        props.login(value.email,value.password,value.rememberMe)
     }
     if (props.isAuth){
         return (
@@ -20,7 +20,7 @@ const Loginpage = (props) =>{
     return(<div>
         <div className={style.textContainer}>
            <div><p className={style.loginText}> LOGIN</p></div>
-          <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
+          <LoginReduxForm onSubmit={onSubmit}/>
 </div>
     </div>)
 };
@@ -31,7 +31,6 @@ const LoginForm = (props) =>{
         <Field type="password" name="password" placeholder="your password" component={Input} validate={ required }/>
         <Field type="checkbox" name="rememberMe" component={"input"}/> remember me
             {(props.error)?<div className={styles.spanError}>{props.error}</div>:undefined}
-            {props.captchaUrl && <div><img src={props.captchaUrl} /><div><Field type="text" name="captcha" placeholder={"enter symbols what you see"} component={"input"}/></div> </div>}
         <button type="submit">Submit</button>
     </form>)
 };
@@ -40,8 +39,7 @@ const LoginReduxForm = reduxForm({
 })(LoginForm);
 const mapStateToProps =(state)=>{
     return{
-        isAuth:state.auth.isAuth,
-        captchaUrl: state.auth.captchaUrl
+        isAuth:state.auth.isAuth
     }
 }
 export default connect(mapStateToProps,{login}) (Loginpage);
