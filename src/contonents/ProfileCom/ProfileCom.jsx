@@ -7,9 +7,8 @@ const ProfileCom = (props) => {
     return (
         <div className={a.content}>
             <ProfileInfo profile={props.profile} status={props.status}
-                         updateStatus={props.updateStatus} isOwner={props.isOwner}
-                         authorizedUserID={props.authorizedUserID}
-            savePhoto={props.savePhoto}/>
+                         updateStatus={props.updateStatus} authorizedUserID={!!props.authorizedUserID}
+                         savePhoto={props.savePhoto} updateProfile={props.updateProfile}/>
             <MyPostsContainer/>
 
         </div>);

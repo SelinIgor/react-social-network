@@ -33,8 +33,8 @@ export const authAPI = {
    authme(){
       return  instance.get(`auth/me`)
    },
-    login(email,password,rememberMe){
-        return instance.post(`/auth/login`, {email,password,rememberMe})
+    login(email,password,rememberMe, captcha=null){
+        return instance.post(`/auth/login`, {email,password,rememberMe,captcha})
     },
     logout(){
        return instance.delete(`/auth/login`)
@@ -51,14 +51,20 @@ export const ProfileAPI = {
     savePhoto(photos){
         const formData = new FormData();
         formData.append('image',photos)
-            return instance.put(`profile/photo`,formData,{
-                headers: {
-                    'content-type': 'multipart/form-data'
-                }
-            })
+        return instance.put(`profile/photo`,formData,{
+            headers: {
+                'content-type': 'multipart/form-data'
+            }
+        })
     },
+    updateProfile(profile){
+        return  instance.put(`profile`,profile)
+    }
 
 }
-
+export const SecurityAPI = {
+    getCaptcha(){
+        return instance.get(`security/get-captcha-url`);
+    }}
 
 

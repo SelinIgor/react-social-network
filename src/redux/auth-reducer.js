@@ -1,14 +1,18 @@
-import {authAPI} from "../api/api";
+import {authAPI, SecurityAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
 
+;
+
 const SET_USER_DATA = 'SET_USER_DATA';
+const GET_CAPTCHA_URL = `GET_CAPTCHA_URL`;
 let InitialState ={
     data: {
         id: null,
         email: null,
         login: null,
         isAuth:false,
-        photo: null
+        photo: null,
+        captchaUrl: null
     }
 };
 
@@ -19,8 +23,18 @@ let authReducer =(state = InitialState,action)=> {
                ...action.data
             };
         }
+        case GET_CAPTCHA_URL:{
+            debugger
+            return {
+                ...state,
+                captchaUrl: action.captchaUrl
+
+            }
+
+        }
         default: return state;
     }
+
 };
 export let setUserAuthData = (id, email, login, isAuth)=>{
     return{
@@ -38,15 +52,18 @@ export const getUserAuthData = () =>
         });
 
 };
-export const login = (email,password,rememberMe) =>{
+export const login = (email,password,rememberMe,captcha) =>{
 
     return (dispatch)=>{
-        authAPI.login(email,password,rememberMe).then(response => {
+        authAPI.login(email,password,rememberMe,captcha).then(response => {
             if(response.data.resultCode===0) {
                 dispatch(getUserAuthData());
             }
             else {
-                let massege = (response.data.messages>0)?response.data.messages[0]:"Some error";
+                if(response.data.resultCode===10){
+                    dispatch(getCaptchaUrl())
+                }
+                let massege = response.data.messages.length>0?response.data.messages[0]:"Some error";
                 dispatch(stopSubmit("login",{_error:massege}));
 
             }
@@ -56,6 +73,22 @@ export const login = (email,password,rememberMe) =>{
         });
     }
 };
+export const setCaptchaSuccess = (captchaUrl)=>{
+    return{
+        type:GET_CAPTCHA_URL,
+        captchaUrl
+    }
+};
+export const getCaptchaUrl = ()=>{
+    return (dispatch)=>{
+        SecurityAPI.getCaptcha().then(response =>{
+            debugger
+            const captchaUrl = response.data.url;
+            dispatch(setCaptchaSuccess(captchaUrl))
+        })
+
+    }
+}
 export const logout = () =>{
     return (dispatch)=>{
         authAPI.logout().then(response => {
