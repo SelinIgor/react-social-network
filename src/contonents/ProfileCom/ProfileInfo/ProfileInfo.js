@@ -30,6 +30,7 @@ const ProfileData = (props) =>{
         <div>Description:{props.profile.lookingForAJobDescription===null?<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corporis dolorum est eum ex inventore, ipsa laudantium minus nemo tempora.</p>:props.profile.lookingForAJobDescription}</div>
         <div>
 
+               
             <p>Contacts:</p>
             {  Object.entries(props.profile.contacts).map(([key,value])=>{
                 return <Contact contactTitle={key} contactValue={value}/>
