@@ -32,8 +32,8 @@ const ProfileInfo =(props)=> {
             <div>
 
                 <p>Contacts:</p>
-                {  Object.keys(props.profile.contacts).map(key=>{
-                    return <Contact contactTitle={key} contactValue={props.profile.contacts[key]}/>
+                {  Object.entries(props.profile.contacts).map(([key,value])=>{
+                    return <Contact contactTitle={key} contactValue={value}/>
                 })
 
                 }
@@ -53,7 +53,7 @@ const ProfileInfo =(props)=> {
 <div className={s.conteiner}>
         <div className={s.background}>
             {props.profile.photos.small==null?   <img src={"https://i.pinimg.com/originals/a9/d0/96/a9d096ac9430a4f297ed99d42861ae9d.jpg"} className={s.avatar}/>:  <img src={props.profile.photos.small } className={s.avatar}/>}
-            <div>  {props.authorizedUserID && <input type={"file"} onChange={onPhotoSelected}/>}</div>
+            <div>  {!props.isOwner || props.isOwner==props.authorizedUserID? <input type={"file"} onChange={onPhotoSelected}></input>:<></>}</div>
             <div className={s.userName}>{props.profile.fullName}</div>
         </div>
 
