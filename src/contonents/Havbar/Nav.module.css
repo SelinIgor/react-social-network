@@ -1,16 +1,18 @@
-.Nav{
-  padding: 10px 10px;
+.Nav {
+    padding: 20px 10px;
     background-color: #4a6da7;
     font-weight: 700;
+
 
 }
 
 .nav {
     color: #000;
     text-align: center;
-    padding: 14px 7px;
+    padding: 5px 7px;
     font-size: 15px;
     transition: 0.3s linear color;
+
 }
 .nav:hover{
     border-bottom: 2px solid black;
@@ -20,7 +22,8 @@
 
     color: lavender;
 }
-.topNav{
+.Container{
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
 }

@@ -1,11 +1,13 @@
 .loginText{
     font-size: 20px;
     font-weight: 700;
+    margin: 0;
+
 
 }
 .textContainer{
 
     width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    padding: 25px 0px;
 }

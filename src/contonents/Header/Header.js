@@ -19,12 +19,6 @@ function Header(props) {
 
 
             <div className={s.authBlock}>
-                {
-                    props.isAuth ? <div className={s.nameWithExit}>
-                            <div><NavLink to={`/profile/${props.id}`}> {props.login}</NavLink></div>
-                            <a onClick={props.logout}>Exit</a></div>
-                        : <NavLink  to={"/login"}>Login</NavLink>
-                }
 
             </div>
 
