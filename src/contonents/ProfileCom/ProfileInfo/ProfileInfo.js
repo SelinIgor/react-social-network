@@ -50,10 +50,11 @@ const ProfileInfo =(props)=> {
 
     return(
         <div >
-<div className={s.conteiner}>
+<div className={s.container}>
+<div className={s.box}>
         <div className={s.background}>
             {props.profile.photos.small==null?   <img src={"https://i.pinimg.com/originals/a9/d0/96/a9d096ac9430a4f297ed99d42861ae9d.jpg"} className={s.avatar}/>:  <img src={props.profile.photos.small } className={s.avatar}/>}
-            <div>  {!props.isOwner || props.isOwner==props.authorizedUserID? <input type={"file"} onChange={onPhotoSelected}></input>:<></>}</div>
+            <div>  {!props.isOwner || props.isOwner===props.authorizedUserID? <input type={"file"} onChange={onPhotoSelected}></input>:<></>}</div>
             <div className={s.userName}>{props.profile.fullName}</div>
         </div>
 
@@ -62,8 +63,8 @@ const ProfileInfo =(props)=> {
     </div>
     {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit}/>:<div><ProfileData profile={props.profile}/><button onClick={onClick}>edit</button></div>}
 
+</div>
 
-    <hr className={s.line}/>
         </div>
 
     </div>);

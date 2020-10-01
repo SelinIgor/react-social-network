@@ -27,6 +27,7 @@ class App extends React.Component {
         }
         return (
             <div className="app-wrapper">
+
                 <HeaderContainer/>
                 <Nav/>
                 <div className="app-wrapper-content">

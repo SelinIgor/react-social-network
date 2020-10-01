@@ -1,26 +1,38 @@
 .Nav {
-    padding: 20px 10px;
+    margin: 0 auto;
+
     background-color: #4a6da7;
     font-weight: 700;
 
+
+    width: 100%;
+    max-width: 1200px;
+    padding-bottom: 20px;
 
 }
 
 .nav {
     color: #000;
     text-align: center;
-    padding: 5px 7px;
+
     font-size: 15px;
-    transition: 0.3s linear color;
+    transition: 0.2s linear color;
+    margin-right: 20px;
 
 }
+.nav:last-child{
+    margin-right: 10px;
+}
+.nav:first-child{
+    margin-left: 10px;
+}
 .nav:hover{
-    border-bottom: 2px solid black;
+
     color: lavender;
 }
 .active{
-
     color: lavender;
+    border-bottom: 2px solid black;
 }
 .Container{
     display: flex;

@@ -19,11 +19,12 @@ a{
     width: 100%;
     max-width: 1200px;
 
-
 }
 .app-wrapper-content{
     background: darkgrey;
     min-height: 1000px;
+    margin: 0 auto;
+    width: 100%;
     max-width: 1200px;
 
 

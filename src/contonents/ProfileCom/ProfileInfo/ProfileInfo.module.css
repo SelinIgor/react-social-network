@@ -1,12 +1,14 @@
 
 
-.conteiner{
+.container{
+margin-left: 25px;
 
-width: 600px;
-    border-left: 2px solid #4a6da7;
-    border-right: 2px solid #4a6da7;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     padding: 10px;
-
+    width: 100%;
+    max-height: 700px;
 
 }
 .background{
@@ -14,9 +16,9 @@ width: 600px;
     background-image: url("https://img.freepik.com/free-vector/abstract-technology-particle-background_52683-25766.jpg?size=626&ext=jpg");
     background-repeat: no-repeat;
     background-size: cover;
-
     padding-left: 25px;
     margin-bottom: 10px;
+    max-width: 500px;
 
 }
 .avatar{
@@ -36,4 +38,8 @@ width: 600px;
 .background img {
     opacity: 1;
     filter: alpha(opacity: 70);
+}
+.box{
+    padding-left: 7px;
+    border-left: 2px solid silver;;
 }
