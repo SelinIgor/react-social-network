@@ -2,30 +2,15 @@
 body {
     font-family: 'Josefin Sans', cursive;
     margin: 0;
-}
-
-
-a{
-    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
 }
 *,
 :before,
 :after{
     box-sizing: border-box;
 }
-
-.app-wrapper{
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
-
-}
 .app-wrapper-content{
     background: darkgrey;
     min-height: 1000px;
-    margin: 0 auto;
     width: 100%;
-    max-width: 1200px;
-
-
 }

@@ -21,7 +21,7 @@ const  Post= (props) => {
             }}>
                 {u.liked
                     ? <i className="fas fa-heart"> </i>
-                    :<i class="far fa-heart"> </i>
+                    :<i className="far fa-heart"> </i>
                 }
 
                 

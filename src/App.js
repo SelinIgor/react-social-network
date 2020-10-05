@@ -31,8 +31,8 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <Nav/>
                 <div className="app-wrapper-content">
+                    <Route  path={"/profile/:userId?"} render={() => <ProfileComContainer/>}/>
                     <Route path='/messages' render={() => <MassegesContainer/>}/>
-                    <Route path="/profile/:userId?" render={() => <ProfileComContainer/>}/>
                     <Route path='/users' render={() => <UsersContainer/>}/>
                     <Route path="/music" component={Music}/>
                     <Route path='/login' render={() => <LoginPage/>}/>
