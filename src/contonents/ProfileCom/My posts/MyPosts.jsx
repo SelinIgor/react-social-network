@@ -12,11 +12,11 @@ const maxLength = max => value =>
 //обовязково брати перевірку наявності значення(value)
 const maxLength30 = maxLength(30);
 
-const MyPosts = React.memo((props) => {
+const MyPosts = (props) => {
+    debugger
     let addingPost = (value) => {
         props.addPost(value.newPostText);
     };
-console.log("render");
     return (
 
         <div className={a.MainConteiner}>
@@ -31,10 +31,11 @@ console.log("render");
                     postData={props.postData}
                     addLike={props.addLike}
                     buttonDef={props.buttonDef}
+                    profile={props.profile}
                 />
             </div>
         </div>);
-});
+}
 
 let AddPost = (props)=>{
 
