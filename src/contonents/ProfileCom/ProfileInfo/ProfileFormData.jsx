@@ -8,7 +8,11 @@ const Input = Element("input")
 const ProfileDataForm = (props)=> {
 
     return(
+        <div className={s.container}>
+
         <form onSubmit={props.handleSubmit}>
+            <div className={s.buttons}><div> <button className={s.btn} type={"submit"}>save</button></div>
+                <div> <button onClick={props.onCancel} className={s.btn}>cancel</button></div></div>
 
             {(props.error)?<div className={styles.spanError}>{props.error}</div>:undefined}
             About me: <Field type="text" name="aboutMe" placeholder="" component={Input} />
@@ -22,12 +26,12 @@ const ProfileDataForm = (props)=> {
             })
 
             }
-            <div className={s.buttons}><div> <button type={"submit"}>save</button></div>
-                <div> <button onClick={props.onCancel}>cancel</button></div></div>
 
 
 
-        </form>)
+
+        </form>
+        </div>)
 }
 const ProfileDataFormRedux = reduxForm(
     {form:"profileData"}

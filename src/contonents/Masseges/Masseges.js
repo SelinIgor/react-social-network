@@ -3,7 +3,6 @@ import s from './Masseges.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MassegeItem/MassegeItem";
 import {Field, reduxForm} from "redux-form";
-import textareaField from './../FormsControls/FormsControls'
 import {Element} from './../FormsControls/FormsControls'
 const Textarea = Element("textarea")
 const maxLength = (max) =>
@@ -17,7 +16,7 @@ const Masseges = (props)=> {
     };
     let MassegesElements = props.dialogsPage.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
     let DislogsElemets = props.dialogsPage.dialogs.map((dialog)=> <DialogItem name={dialog.name} id={dialog.id} kartinka={dialog.kartinka}/> );
-    return (<div className={s["mainMasseges"]}>
+    return (<div className={s["mainMessages"]}>
         <div className={s["dialogsItem"]}>
             {DislogsElemets}
         </div>

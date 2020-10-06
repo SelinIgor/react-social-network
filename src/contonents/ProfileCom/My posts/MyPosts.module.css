@@ -1,9 +1,8 @@
-
-.mainContainer{
-   margin: 0 200px;
-}
-.newPost{
-    margin: 0 auto;
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px 30px 0;
 }
 .textarea{
     max-width: 250px;

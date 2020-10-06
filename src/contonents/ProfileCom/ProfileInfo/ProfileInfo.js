@@ -63,7 +63,7 @@ const ProfileInfo =(props)=> {
     <div>
        <ProfileStatus updateStatus={props.updateStatus}  status={props.status}/>
     </div>
-    {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit} onCancel={props.onCancel}/>:<div><ProfileData profile={props.profile}/><button onClick={onClick}>edit</button></div>}
+    {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit} onCancel={props.onCancel}/>:<div><ProfileData profile={props.profile}/><button onClick={onClick} className={s.btn}>edit</button></div>}
 
 </div>
 

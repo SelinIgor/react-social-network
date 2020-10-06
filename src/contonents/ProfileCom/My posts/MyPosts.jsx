@@ -16,7 +16,7 @@ const MyPosts = (props) => {
     };
     return (
 
-        <div className={a.mainContainer}>
+        <div className={a.container}>
             <div className={a.newPost}>
                 <div className={a.myPost}>
                     My posts
