@@ -24,9 +24,16 @@ padding: 30px;
     padding: 30px;
 }
 .shareButton{
+
+    margin-top: 5px;
+    display: block;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 2px;
+    transition: background-color .1s linear;
     border: none;
-    padding: 5px 10px;
-    margin-left: 10px;
+    outline:none;
 }
 .shareButton:hover{
     background-color: cornflowerblue;

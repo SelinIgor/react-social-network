@@ -3,8 +3,9 @@ import s from './Masseges.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MassegeItem/MassegeItem";
 import {Field, reduxForm} from "redux-form";
-import {Element} from "../FormsControls/FormsControls";
-const Textarea = Element("textarea");
+import textareaField from './../FormsControls/FormsControls'
+import {Element} from './../FormsControls/FormsControls'
+const Textarea = Element("textarea")
 const maxLength = (max) =>
     (value)=> {
         if(value && value.length > max) return `Must be ${max} characters or less`

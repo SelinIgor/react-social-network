@@ -19,6 +19,7 @@
 }
 .shareButton{
     border: none;
+    outline: none;
     padding: 2px 5px;
 }
 .shareButton:hover{

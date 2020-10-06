@@ -1,17 +1,12 @@
-.content {
-    background: darkgrey;
-    grid-area: c;
-}
-.MainConteiner{
+
+.mainContainer{
    margin: 0 200px;
-
-
 }
 .newPost{
     margin: 0 auto;
 }
 .textarea{
-    width: 250px;
+    max-width: 250px;
     outline: none;
     resize: none;
 }
@@ -20,8 +15,15 @@
     padding-bottom: 15px;
 }
 .shareButton{
+    margin-top: 5px;
+    display: block;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 2px;
+    transition: background-color .1s linear;
     border: none;
-    padding: 5px 10px;
+    outline:none;
 }
 .shareButton:hover{
     background-color: cornflowerblue;

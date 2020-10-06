@@ -19,16 +19,18 @@
     margin-top: 5px;
     display: block;
     font-family: inherit;
-    border: 0;
     cursor: pointer;
     padding: 5px 7px;
     border-radius: 2px;
     transition: background-color .1s linear;
+    border: none;
+    outline:none;
 
 }
 .btnSpecial{
 text-transform: lowercase;
 }
 .btn:hover{
-    background-color: #888282;
+    background-color: cornflowerblue;
 }
+

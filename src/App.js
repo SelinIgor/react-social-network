@@ -14,6 +14,7 @@ import {compose} from "redux";
 import {initializeApp} from "./redux/appReducer";
 import Preloader from "./contonents/common/Preloader/Preloader";
 import store from "./redux/redux-store";
+import Footer from "./contonents/Footer/Footer";
 
 
 class App extends React.Component {
@@ -37,6 +38,7 @@ class App extends React.Component {
                     <Route path="/music" component={Music}/>
                     <Route path='/login' render={() => <LoginPage/>}/>
                 </div>
+                <Footer/>
             </div>
         );
     }

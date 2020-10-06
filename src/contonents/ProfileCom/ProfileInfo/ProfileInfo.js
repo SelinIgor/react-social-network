@@ -5,7 +5,7 @@ import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import ProfileDataForm from "./ProfileFormData";
 const ProfileInfo =(props)=> {
     const [editMode,setEditMode]= useState(false)
-    debugger;
+
     if (!props.profile) {
         return <Preloader/>
     }
@@ -21,6 +21,9 @@ const ProfileInfo =(props)=> {
 
     const onSubmit = (profileData)=>{
         props.updateProfile(profileData)
+        setEditMode(false)
+    }
+    const onCancel = ()=>{
         setEditMode(false)
     }
 
@@ -43,7 +46,7 @@ const ProfileInfo =(props)=> {
         </div>)
     }
 
-    function onClick() {
+    function onClick(editMode) {
         return    setEditMode(true)
     }
 
@@ -60,7 +63,7 @@ const ProfileInfo =(props)=> {
     <div>
        <ProfileStatus updateStatus={props.updateStatus}  status={props.status}/>
     </div>
-    {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit}/>:<div><ProfileData profile={props.profile}/><button onClick={onClick}>edit</button></div>}
+    {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit} onCancel={props.onCancel}/>:<div><ProfileData profile={props.profile}/><button onClick={onClick}>edit</button></div>}
 
 </div>
 

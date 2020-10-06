@@ -2,13 +2,14 @@ import React, {useState} from "react";
 import {Field, reduxForm} from "redux-form";
 import {Element} from "../../FormsControls/FormsControls";
 import styles from "../../FormsControls/FormsControls.module.css";
-import {required} from "../../login/Loginpage";
+import s from './ProfileFormData.module.css'
+
 const Input = Element("input")
 const ProfileDataForm = (props)=> {
 
     return(
         <form onSubmit={props.handleSubmit}>
-            <div> <button type={"submit"}>save</button></div>
+
             {(props.error)?<div className={styles.spanError}>{props.error}</div>:undefined}
             About me: <Field type="text" name="aboutMe" placeholder="" component={Input} />
             Your fullname <Field type="text" name="fullName" placeholder="" component={Input} />
@@ -17,9 +18,12 @@ const ProfileDataForm = (props)=> {
             You in social networks
             {Object.entries(props.profile.contacts).map(([key,value])=>{
                 return <Field type="text" name={'contacts.'+key} placeholder={key} component={Input} key={key} />
+
             })
 
             }
+            <div className={s.buttons}><div> <button type={"submit"}>save</button></div>
+                <div> <button onClick={props.onCancel}>cancel</button></div></div>
 
 
 
