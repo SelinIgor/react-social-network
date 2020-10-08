@@ -3,6 +3,7 @@ body {
     font-family: 'Josefin Sans', cursive;
     margin: 0;
     -webkit-font-smoothing: antialiased;
+    background: darkgrey;
 }
 *,
 :before,
@@ -10,7 +11,7 @@ body {
     box-sizing: border-box;
 }
 .app-wrapper-content{
-    background: darkgrey;
+
     min-height: 1000px;
     width: 100%;
 }
