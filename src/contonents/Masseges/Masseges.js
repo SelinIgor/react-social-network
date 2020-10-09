@@ -17,11 +17,11 @@ const Masseges = (props)=> {
     let MassegesElements = props.dialogsPage.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
     let DislogsElemets = props.dialogsPage.dialogs.map((dialog)=> <DialogItem name={dialog.name} id={dialog.id} kartinka={dialog.kartinka}/> );
     return (<div className={s["mainMessages"]}>
-        <div className={s["dialogsItem"]}>
+        <div className={s["dialogsContainer"]}>
             {DislogsElemets}
         </div>
         <div className={s.dialogs}>
-            {MassegesElements}
+          <div>  {MassegesElements}</div>
             <div className={s.inputMassage}>
      <AddReduxMassage onSubmit={addNewMassage} />
             </div>

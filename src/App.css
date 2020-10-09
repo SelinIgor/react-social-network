@@ -3,12 +3,15 @@ body {
     font-family: 'Josefin Sans', cursive;
     margin: 0;
     -webkit-font-smoothing: antialiased;
-    background: darkgrey;
 }
 *,
 :before,
 :after{
     box-sizing: border-box;
+}
+.app-wrapper{
+    background: darkgrey;
+    width: 100%;
 }
 .app-wrapper-content{
 

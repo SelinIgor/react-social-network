@@ -1,25 +1,21 @@
 .mainMessages{
     display: flex;
-    justify-content: flex-start;
     align-content: center;
+
 }
-.dialogsItem{
+.dialogsContainer{
 padding: 30px;
 
 }
-.inputMassage{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    border-top: 2px solid silver;
-}
 .textarea{
-    width: 250px;
     outline: none;
-    resize: none;
+
 }
 .dialogs{
     padding: 30px;
+}
+.inputMassage{
+   padding-right: 40px;
 }
 .shareButton{
 

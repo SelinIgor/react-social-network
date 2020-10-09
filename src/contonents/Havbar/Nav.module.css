@@ -1,10 +1,7 @@
 .Nav {
     margin: 0 auto;
-
     background-color: #4a6da7;
     font-weight: 700;
-
-
     width: 100%;
     padding-bottom: 20px;
 
@@ -13,15 +10,14 @@
 .nav {
     color: #000;
     text-align: center;
-
     text-decoration: none;
     font-size: 15px;
     transition: 0.2s linear color;
-    margin-right: 20px;
+    margin: 10px;
 
 }
 .nav:last-child{
-    margin-right: 10px;
+   padding-right: 10px;
 }
 .nav:first-child{
     margin-left: 10px;
@@ -32,10 +28,11 @@
 }
 .active{
     color: lavender;
-    border-bottom: 2px solid black;
+    border-bottom: 3px solid black;
 }
 .Container{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+
 }

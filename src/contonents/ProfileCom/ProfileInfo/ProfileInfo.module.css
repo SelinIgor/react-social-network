@@ -18,10 +18,10 @@
     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR3qTzmKETd44pcwGANYqogSKnY52MK4Q9C9g&usqp=CAU");
     background-repeat: no-repeat;
     background-size: cover;
-    min-width: 500px;
+
     width: 100%;
     padding: 15px;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 
 
 }
