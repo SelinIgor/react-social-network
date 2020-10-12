@@ -2,7 +2,6 @@
 .dialogs{
 
     display: flex;
-    flex-direction: row;
     border: 3px solid silver;
     margin-bottom: 20px;
     padding: 5px 10px;
@@ -41,4 +40,15 @@
 .active{
     border-bottom: 2px solid black;
     font-weight: bold;
+}
+@media (max-width: 600px) {
+    .dialogs{
+
+
+        padding: 0px;
+
+
+
+
+    }
 }

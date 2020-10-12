@@ -57,3 +57,9 @@
 .bnt:hover{
     background-color: cornflowerblue;
 }
+@media (max-width: 600px) {
+    .container{
+        padding: 5px;
+    }
+
+}

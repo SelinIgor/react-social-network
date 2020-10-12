@@ -1,7 +1,6 @@
 .mainMessages{
     display: flex;
     align-content: center;
-
 }
 .dialogsContainer{
 padding: 30px;
@@ -12,10 +11,7 @@ padding: 30px;
 
 }
 .dialogs{
-    padding: 30px;
-}
-.inputMassage{
-   padding-right: 40px;
+    padding-top: 30px;
 }
 .shareButton{
 
@@ -34,4 +30,10 @@ padding: 30px;
 }
 .shareButton:active{
     font-weight: bold;
+}
+@media (max-width: 600px) {
+    .dialogsContainer{
+        padding: 5px;
+    }
+
 }

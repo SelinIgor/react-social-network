@@ -4,7 +4,6 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import MyPostsContainer from "./My posts/MyPostsContainer";
 
 const ProfileCom = (props) => {
-    debugger
     return (
         <div className={a.container}>
             <ProfileInfo profile={props.profile} status={props.status}
