@@ -39,11 +39,16 @@
 @media (max-width: 430px) {
     .Container{
         display: flex;
+        justify-content: flex-start;
+
+    }
+    .menu{
+        display: flex;
         flex-wrap: wrap;
 
     }
     .nav{
         display: block;
-        width: 33.333%;
+        width: 20%;
     }
 }
