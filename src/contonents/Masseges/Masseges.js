@@ -3,7 +3,7 @@ import s from './Masseges.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MassegeItem/MassegeItem";
 import {Field, reduxForm} from "redux-form";
-import {Element} from './../FormsControls/FormsControls'
+import {Element} from '../FormsControls/FormsControls'
 const Textarea = Element("textarea")
 const maxLength = (max) =>
     (value)=> {
@@ -14,15 +14,15 @@ const Masseges = (props)=> {
     let addNewMassage = (values) =>{
     props.sendSms(values.newMassegeBody);
     };
-    let MassegesElements = props.dialogsPage.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
-    let DislogsElemets = props.dialogsPage.dialogs.map((dialog)=> <DialogItem name={dialog.name} id={dialog.id} kartinka={dialog.kartinka}/> );
+    let MessagesElements = props.dialogsPage.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
+    let DialogsElements = props.dialogsPage.dialogs.map((dialog)=> <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} kartinka={dialog.kartinka}/> );
     return (<div className={s["mainMessages"]}>
         <div className={s["dialogsContainer"]}>
-            {DislogsElemets}
+            {DialogsElements}
         </div>
         <div className={s.dialogs}>
-          <div>  {MassegesElements}</div>
-            <div className={s.inputMassage}>
+          <div>  {MessagesElements}</div>
+            <div>
      <AddReduxMassage onSubmit={addNewMassage} />
             </div>
         </div>

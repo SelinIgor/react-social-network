@@ -20,9 +20,9 @@ const Loginpage = (props) =>{
         )
     }
     return(<div>
-        <div className={style.textContainer}>
+        <div className={style.container}>
            <div><p className={style.loginText}> LOGIN</p></div>
-            <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
+            <LoginReduxForm  onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
 </div>
     </div>)
 };

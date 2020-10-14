@@ -19,6 +19,7 @@ import Footer from "./contonents/Footer/Footer";
 import Setting from "./contonents/Setting/Setting";
 
 
+
 class App extends React.Component {
 
     componentDidMount() {
@@ -33,8 +34,10 @@ class App extends React.Component {
 
                 <HeaderContainer/>
                 <Nav/>
+
+
                 <div className="app-wrapper-content">
-                    <Route exact path={"/"} render={() => <Redirect to={"/profile"}/>}/>
+                    <Route path={"/react-social-network" && "/" } render={() => <Redirect to={"/profile"}/>}/>
                     <Route path={"/profile/:userId?"} render={() => <ProfileComContainer/>}/>
                     <Route path='/messages' render={() => <MassegesContainer/>}/>
                     <Route path='/users' render={() => <UsersContainer/>}/>
@@ -43,6 +46,7 @@ class App extends React.Component {
                     <Route path='/setting' render={()=><Setting/>}/>
                 </div>
                 <Footer/>
+
             </div>
         );
     }

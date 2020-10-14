@@ -47,7 +47,13 @@ const ProfileInfo =(props)=> {
     }
 
     function onClick(editMode) {
-        return    setEditMode(true)
+        if(!props.isOwner || props.isOwner===props.authorizedUserID) {
+
+            return setEditMode(true)
+        }
+    }
+    const SelectPhoto = ()=>{
+        return <input type={"file"} onChange={onPhotoSelected}/>
     }
 
     return(
@@ -56,14 +62,14 @@ const ProfileInfo =(props)=> {
 <div className={s.box}>
         <div className={s.background}>
             {props.profile.photos.small==null?   <img src={"https://i.pinimg.com/originals/a9/d0/96/a9d096ac9430a4f297ed99d42861ae9d.jpg"} className={s.avatar}/>:  <img src={props.profile.photos.small } className={s.avatar}/>}
-            <div>  {!props.isOwner || props.isOwner===props.authorizedUserID? <input type={"file"} onChange={onPhotoSelected}/>:<></>}</div>
+            <div>  {(!props.isOwner || props.isOwner===props.authorizedUserID) && <SelectPhoto/>}</div>
             <div className={s.userName}>{props.profile.fullName}</div>
         </div>
 
     <div>
-       <ProfileStatus updateStatus={props.updateStatus}  status={props.status}/>
+       <ProfileStatus updateStatus={props.updateStatus}  status={props.status} authorizedUserID={props.authorizedUserID} isOwner={props.isOwner}/>
     </div>
-    {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit} onCancel={props.onCancel}/>:<div><ProfileData profile={props.profile}/><button onClick={onClick} className={s.btn}>edit</button></div>}
+    {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit} onCancel={props.onCancel}/>:<div><ProfileData profile={props.profile}/>{editMode&&<button onClick={onClick} className={s.btn}>edit</button>}</div>}
 
 </div>
 

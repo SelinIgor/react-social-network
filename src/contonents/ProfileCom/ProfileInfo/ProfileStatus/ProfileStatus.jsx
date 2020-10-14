@@ -13,10 +13,12 @@ class ProfileStatus extends React.Component{
     })
     };
     ActivateEditMode=()=>{
-        this.setState({
-                editMode: true
-            }
-        )
+        if(!this.props.isOwner || this.props.isOwner===this.props.authorizedUserID) {
+            this.setState({
+                    editMode: true
+                }
+            )
+        }
     }
 
     DeactivateEditMode=()=>{

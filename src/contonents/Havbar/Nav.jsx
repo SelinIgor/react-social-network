@@ -3,8 +3,10 @@ import s from './Nav.module.css'
 import {NavLink} from "react-router-dom";
 import {connect} from "react-redux";
 import {logout} from "../../redux/auth-reducer";
+
 const Nav = (props)=> {
-    return (<div className={s.Nav}>
+    debugger
+    return (<nav className={s.Nav} id={"navigation"}>
         <div className={s.topNav}>
             <div className={s.Container}>
                 <div className={s.menu}>
@@ -29,7 +31,7 @@ const Nav = (props)=> {
 
             </div>
         </div>
-        </div>);}
+        </nav>);}
 
 function mapStateToProps(state) {
     return {

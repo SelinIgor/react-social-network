@@ -3,7 +3,7 @@ import React from 'react';
 import {sendSmsActionCreator} from "../../redux/dialogsReducer";
 import Masseges from "./Masseges";
 import {connect} from "react-redux";
-import withAuthRedirect from "../../hoc/withAuthRedirect";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 
 const mapStateToProps = (state) =>{

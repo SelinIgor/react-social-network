@@ -5,8 +5,9 @@
     width: 100%;
     padding-bottom: 20px;
 
-}
 
+
+}
 .nav {
     color: #000;
     text-align: center;
@@ -50,5 +51,12 @@
     .nav{
         display: block;
         width: 20%;
+    }
+}
+@media (max-width: 350px) {
+
+    .nav{
+        display: block;
+        width: 30%;
     }
 }

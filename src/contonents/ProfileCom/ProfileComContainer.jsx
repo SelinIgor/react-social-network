@@ -3,7 +3,7 @@ import ProfileCom from "./ProfileCom";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {getProfileStatus, getUserProfile, savePhoto, updateProfile, updateStatus} from "../../redux/profileReducer";
-import withAuthRedirect from "../../hoc/withAuthRedirect";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 
 
