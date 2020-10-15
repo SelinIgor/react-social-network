@@ -5,7 +5,7 @@ import  {BrowserRouter, Route} from "react-router-dom";
 import {Redirect} from "react-router-dom";
 import  {withRouter} from "react-router-dom";
 import Music from "./contonents/Music/Music";
-import MassegesContainer from "./contonents/Masseges/MassegesContainer";
+import MessagesContainer from "./contonents/Masseges/MassegesContainer";
 import UsersContainer from "./contonents/Users/UsersContainer";
 import ProfileComContainer from "./contonents/ProfileCom/ProfileComContainer";
 import HeaderContainer from "./contonents/Header/HeaderContainer";
@@ -39,7 +39,7 @@ class App extends React.Component {
                 <div className="app-wrapper-content">
                     <Route path={"/react-social-network" && "/" } render={() => <Redirect to={"/profile"}/>}/>
                     <Route path={"/profile/:userId?"} render={() => <ProfileComContainer/>}/>
-                    <Route path='/messages' render={() => <MassegesContainer/>}/>
+                    <Route path='/messages' render={() => <MessagesContainer/>}/>
                     <Route path='/users' render={() => <UsersContainer/>}/>
                     <Route path="/music" component={Music}/>
                     <Route path='/login' render={() => <LoginPage/>}/>

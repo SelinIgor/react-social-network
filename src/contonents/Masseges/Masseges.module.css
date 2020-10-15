@@ -8,6 +8,8 @@ padding: 30px;
 }
 .textarea{
     outline: none;
+    resize: none;
+
 
 }
 .dialogs{
@@ -34,10 +36,16 @@ padding: 30px;
 @media (max-width: 600px) {
     .dialogsContainer{
         padding: 5px;
-    }
-    .dialogs{
-        padding: 5px;
 
     }
+    .dialogs{
+        padding: 5px 0px;
+    }
+    .textarea{
+       width: 142px;
+
+
+    }
+
 
 }

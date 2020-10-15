@@ -16,7 +16,7 @@ const ProfileInfo =(props)=> {
         }
     }
     const Contact = ({contactTitle, contactValue})=>{
-        return<div> {contactTitle}:{contactValue}</div>
+        return <div> {contactTitle}:{contactValue}</div>
     }
 
     const onSubmit = (profileData)=>{
@@ -47,10 +47,7 @@ const ProfileInfo =(props)=> {
     }
 
     function onClick(editMode) {
-        if(!props.isOwner || props.isOwner===props.authorizedUserID) {
-
             return setEditMode(true)
-        }
     }
     const SelectPhoto = ()=>{
         return <input type={"file"} onChange={onPhotoSelected}/>
@@ -69,7 +66,7 @@ const ProfileInfo =(props)=> {
     <div>
        <ProfileStatus updateStatus={props.updateStatus}  status={props.status} authorizedUserID={props.authorizedUserID} isOwner={props.isOwner}/>
     </div>
-    {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit} onCancel={props.onCancel}/>:<div><ProfileData profile={props.profile}/>{editMode&&<button onClick={onClick} className={s.btn}>edit</button>}</div>}
+    {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit} onCancel={props.onCancel}/>:<div><ProfileData profile={props.profile}/>{(!props.isOwner || props.isOwner===props.authorizedUserID)&&<button onClick={onClick} className={s.btn}>edit</button>}</div>}
 
 </div>
 

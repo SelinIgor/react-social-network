@@ -17,6 +17,7 @@
 }
 .avatar{
     margin-right: 10px;
+    padding: 5px;
 }
 .shareButton{
     border: none;
@@ -28,4 +29,8 @@
 }
 .shareButton:active{
     font-weight: bold;
+}
+.shareButton {
+    border-radius: 3px;
+    background: transparent;
 }

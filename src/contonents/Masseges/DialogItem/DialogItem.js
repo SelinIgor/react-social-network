@@ -2,7 +2,7 @@ import React from 'react';
 import s from './DialogItem.module.css';
 import {NavLink} from "react-router-dom";
 const DialogItem = (props)=>{
-    let path='/Masseges/' + props.id;
+    let path='/profile';
     return(
         <div className={s.dialogs}>
             <div className={s.photo}><img src={props.kartinka} className={s.kartinka}/></div>

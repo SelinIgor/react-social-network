@@ -5,7 +5,6 @@ import {connect} from "react-redux";
 import {logout} from "../../redux/auth-reducer";
 
 const Nav = (props)=> {
-    debugger
     return (<nav className={s.Nav} id={"navigation"}>
         <div className={s.topNav}>
             <div className={s.Container}>

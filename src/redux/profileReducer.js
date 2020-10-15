@@ -6,12 +6,13 @@ const ADD_LIKE ="ADD_LIKE";
 const SET_USER_PROFILE='SET_USER_PROFILE';
 const SET_PROFILE_STATUS='SET_PROFILE_STATUS';
 const SAVE_PHOTO = 'SAVE_PHOTO'
+const picture = "https://klike.net/uploads/posts/2019-03/1551511784_4.jpg"
 let InitialState ={
    profile: null,
     status:null,
-    postData :[{massege:'Hello, sabaki! Ya naruto uzumaki', kartinka:'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg', likes:201, id:1,liked:false},
-        {massege:'I wanna end me' ,kartinka:'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg' ,likes:15,id:2,liked: false},
-        {massege:'Whats wrong with you?' ,kartinka:"https://klike.net/uploads/posts/2019-03/1551511784_4.jpg" ,likes:64,id:3,liked:false}],
+    postData :[{massege:"Hi there, I'm a new user", kartinka: picture, likes:201, id:1,liked:false},
+        {massege:'Have a nice day to everyone' ,kartinka:picture ,likes:15,id:2,liked: false},
+        {massege:'I want to get an awesome experience' ,kartinka:picture ,likes:64,id:3,liked:false}],
     buttonDef: "like"
 }
 
@@ -62,13 +63,8 @@ let profileReducer=(state = InitialState,action)=> {
                 profile: {...state.profile, photos: action.photos}
             }
         }
-
-
         default: return state;
-
     }
-
-
 }
 
 export const addPostActionCreator=(newPostText)=>{
