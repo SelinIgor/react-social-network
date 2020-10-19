@@ -54,7 +54,7 @@ class Header extends React.Component {
 
             {/*Hav*/}
             <nav className={s.Nav} id={"nav"}>
-                <div className={s.topNav}>
+                <div>
                     <div className={s.Container}>
                         <div className={s.menu}>
                             <NavLink to="/profile" className={s.nav} activeClassName={s.active}>Profile</NavLink>
