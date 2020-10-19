@@ -3,8 +3,8 @@ import s from './Masseges.module.css';
 import DialogItem from "./DialogItem/DialogItem";
 import MessageItem from "./MassegeItem/MassegeItem";
 import {Field, reduxForm} from "redux-form";
-import {Element} from "../FormsControls/FormsControls";
-const Textarea = Element("textarea");
+import {Element} from '../FormsControls/FormsControls'
+const Textarea = Element("textarea")
 const maxLength = (max) =>
     (value)=> {
         if(value && value.length > max) return `Must be ${max} characters or less`
@@ -14,15 +14,15 @@ const Masseges = (props)=> {
     let addNewMassage = (values) =>{
     props.sendSms(values.newMassegeBody);
     };
-    let MassegesElements = props.dialogsPage.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
-    let DislogsElemets = props.dialogsPage.dialogs.map((dialog)=> <DialogItem name={dialog.name} id={dialog.id} kartinka={dialog.kartinka}/> );
-    return (<div className={s["mainMasseges"]}>
-        <div className={s["dialogsItem"]}>
-            {DislogsElemets}
+    let MessagesElements = props.dialogsPage.masseges.map((massege)=> <MessageItem text={massege.text}/>) ;
+    let DialogsElements = props.dialogsPage.dialogs.map((dialog)=> <DialogItem key={dialog.id} name={dialog.name} id={dialog.id} kartinka={dialog.kartinka}/> );
+    return (<div className={s["mainMessages"]}>
+        <div className={s["dialogsContainer"]}>
+            {DialogsElements}
         </div>
         <div className={s.dialogs}>
-            {MassegesElements}
-            <div className={s.inputMassage}>
+          <div>  {MessagesElements}</div>
+            <div>
      <AddReduxMassage onSubmit={addNewMassage} />
             </div>
         </div>

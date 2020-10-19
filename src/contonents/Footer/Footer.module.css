@@ -1,0 +1,13 @@
+.footerContainer{
+    min-height: 50px;
+    background: #4a6da7;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.authorInfo{
+   font-size: 16px;
+    text-transform: lowercase;
+
+
+}

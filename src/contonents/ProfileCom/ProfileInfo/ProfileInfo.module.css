@@ -1,23 +1,27 @@
 
 
-.conteiner{
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding: 30px 30px 0;
 
-width: 600px;
-    margin: 50px auto;
-    border-left: 2px solid #4a6da7;
-    border-right: 2px solid #4a6da7;
-    padding: 10px;
+
 
 
 }
 .background{
 
-    background-image: url("https://img.freepik.com/free-vector/abstract-technology-particle-background_52683-25766.jpg?size=626&ext=jpg");
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR3qTzmKETd44pcwGANYqogSKnY52MK4Q9C9g&usqp=CAU");
     background-repeat: no-repeat;
     background-size: cover;
 
-    padding-left: 25px;
-    margin-bottom: 10px;
+    width: 100%;
+    padding: 15px;
+    flex-wrap: wrap;
+
 
 }
 .avatar{
@@ -28,7 +32,7 @@ width: 600px;
 
 }
 .userName{
-    opacity: 0.7;
+
     color: white;
     font-weight: 700;
     font-size:20px;
@@ -37,4 +41,24 @@ width: 600px;
 .background img {
     opacity: 1;
     filter: alpha(opacity: 70);
+}
+.btn{
+    margin-top: 5px;
+    display: block;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 2px;
+    transition: background-color .1s linear;
+    border: none;
+    outline:none;
+}
+.bnt:hover{
+    background-color: cornflowerblue;
+}
+@media (max-width: 600px) {
+    .container{
+        padding: 5px;
+    }
+
 }

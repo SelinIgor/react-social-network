@@ -1,36 +1,51 @@
-.mainMasseges{
-    display: grid;
-    grid-template-columns:  4fr 6fr ;
-    grid-gap: 25px;
+.mainMessages{
+    display: flex;
     align-content: center;
 }
-.dialogsItem{
+.dialogsContainer{
 padding: 30px;
 
 }
-.inputMassage{
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    border-top: 2px solid silver;
-}
 .textarea{
-    width: 250px;
     outline: none;
     resize: none;
+
+
 }
 .dialogs{
-    padding: 30px;
+    padding-top: 30px;
 }
 .shareButton{
+
+    margin-top: 5px;
+    display: block;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 2px;
+    transition: background-color .1s linear;
     border: none;
-    padding: 5px 10px;
-    margin-left: 10px;
+    outline:none;
 }
 .shareButton:hover{
     background-color: cornflowerblue;
 }
 .shareButton:active{
     font-weight: bold;
+}
+@media (max-width: 600px) {
+    .dialogsContainer{
+        padding: 5px;
+
+    }
+    .dialogs{
+        padding: 5px 0px;
+    }
+    .textarea{
+       width: 142px;
+
+
+    }
+
+
 }

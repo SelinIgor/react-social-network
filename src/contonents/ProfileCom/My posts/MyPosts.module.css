@@ -1,17 +1,11 @@
-.content {
-    background: darkgrey;
-    grid-area: c;
-}
-.MainConteiner{
-   margin: 0px 200px;
-
-
-}
-.newPost{
-    margin: 0 auto;
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 30px 30px 0;
 }
 .textarea{
-    width: 250px;
+    max-width: 250px;
     outline: none;
     resize: none;
 }
@@ -20,12 +14,25 @@
     padding-bottom: 15px;
 }
 .shareButton{
+    margin-top: 5px;
+    display: block;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 5px 7px;
+    border-radius: 2px;
+    transition: background-color .1s linear;
     border: none;
-    padding: 5px 10px;
+    outline:none;
 }
 .shareButton:hover{
     background-color: cornflowerblue;
 }
 .shareButton:active{
     font-weight: bold;
+}
+@media (max-width: 600px) {
+    .container{
+        padding: 5px;
+    }
+
 }

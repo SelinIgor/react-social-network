@@ -1,29 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 body {
     font-family: 'Josefin Sans', cursive;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
 }
-
-
-a{
-    text-decoration: none;
+*,
+:before,
+:after{
+    box-sizing: border-box;
 }
-
 .app-wrapper{
-    margin: 0 auto;
-    width: 1200px;
-
-    display: grid;
-    grid-template-areas:
-            "h"
-            "n"
-            "c";
-    grid-template-rows: 60px 60px 5fr;
+    background: darkgrey;
+    width: 100%;
 }
 .app-wrapper-content{
-    background: darkgrey;
-    grid-area: c;
+
     min-height: 1000px;
-    max-width: 1200px;
-
-
+    width: 100%;
 }

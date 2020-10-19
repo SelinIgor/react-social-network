@@ -5,7 +5,7 @@ import ProfileStatus from "./ProfileStatus/ProfileStatus";
 import ProfileDataForm from "./ProfileFormData";
 const ProfileInfo =(props)=> {
     const [editMode,setEditMode]= useState(false)
-    debugger;
+
     if (!props.profile) {
         return <Preloader/>
     }
@@ -16,11 +16,14 @@ const ProfileInfo =(props)=> {
         }
     }
     const Contact = ({contactTitle, contactValue})=>{
-        return<div> {contactTitle}:{contactValue}</div>
+        return <div> {contactTitle}:{contactValue}</div>
     }
 
     const onSubmit = (profileData)=>{
         props.updateProfile(profileData)
+        setEditMode(false)
+    }
+    const onCancel = ()=>{
         setEditMode(false)
     }
 
@@ -28,42 +31,45 @@ const ProfileInfo =(props)=> {
         return(    <div>
             <p> About user: {props.profile.aboutMe} </p>
             <p> Looking for a job: {props.profile.lookingForAJob===true?<span>yes</span>: <span>no</span>} </p>
-            <div>Description:{props.profile.lookingForAJobDescription===null?<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corporis dolorum est eum ex inventore, ipsa laudantium minus nemo tempora.</p>:props.profile.lookingForAJobDescription}</div>
+            <div>Description: {props.profile.lookingForAJobDescription===null?<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corporis dolorum est eum ex inventore, ipsa laudantium minus nemo tempora.</p>:props.profile.lookingForAJobDescription}</div>
             <div>
 
                 <p>Contacts:</p>
                 {  Object.entries(props.profile.contacts).map(([key,value])=>{
-                    return <Contact contactTitle={key} contactValue={value}/>
+                    return value?<Contact contactTitle={key} contactValue={value} key={key}/>:null
                 })
 
                 }
 
-
-            </div>
+            </div>{/*./Contacts*/}
 
         </div>)
     }
 
-    function onClick() {
-        return    setEditMode(true)
+    function onClick(editMode) {
+            return setEditMode(true)
+    }
+    const SelectPhoto = ()=>{
+        return <input type={"file"} onChange={onPhotoSelected}/>
     }
 
     return(
         <div >
-<div className={s.conteiner}>
+<div className={s.container}>
+<div className={s.box}>
         <div className={s.background}>
             {props.profile.photos.small==null?   <img src={"https://i.pinimg.com/originals/a9/d0/96/a9d096ac9430a4f297ed99d42861ae9d.jpg"} className={s.avatar}/>:  <img src={props.profile.photos.small } className={s.avatar}/>}
-            <div>  {!props.isOwner || props.isOwner==props.authorizedUserID? <input type={"file"} onChange={onPhotoSelected}></input>:<></>}</div>
+            <div>  {(!props.isOwner || props.isOwner===props.authorizedUserID) && <SelectPhoto/>}</div>
             <div className={s.userName}>{props.profile.fullName}</div>
         </div>
 
     <div>
-       <ProfileStatus updateStatus={props.updateStatus}  status={props.status}/>
+       <ProfileStatus updateStatus={props.updateStatus}  status={props.status} authorizedUserID={props.authorizedUserID} isOwner={props.isOwner}/>
     </div>
-    {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit}/>:<div><ProfileData profile={props.profile}/><button onClick={onClick}>edit</button></div>}
+    {editMode?<ProfileDataForm profile={props.profile} onSubmit={onSubmit} onCancel={props.onCancel}/>:<div><ProfileData profile={props.profile}/>{(!props.isOwner || props.isOwner===props.authorizedUserID)&&<button onClick={onClick} className={s.btn}>edit</button>}</div>}
 
+</div>
 
-    <hr className={s.line}/>
         </div>
 
     </div>);

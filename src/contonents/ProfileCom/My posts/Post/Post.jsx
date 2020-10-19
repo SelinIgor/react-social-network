@@ -2,6 +2,7 @@ import React from 'react';
 import a from './Post.module.css';
 
 const  Post= (props) => {
+
     return (
         props.postData.map(u => <div key={u.id}>
 
@@ -21,7 +22,7 @@ const  Post= (props) => {
             }}>
                 {u.liked
                     ? <i className="fas fa-heart"> </i>
-                    :<i class="far fa-heart"> </i>
+                    :<i className="far fa-heart"> </i>
                 }
 
                 

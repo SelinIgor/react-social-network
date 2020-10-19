@@ -1,11 +1,40 @@
 .loginText{
     font-size: 20px;
     font-weight: 700;
+    margin-bottom: 15px;
+
 
 }
-.textContainer{
+.container{
 
-    width: 500px;
+    width: auto;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 25px 0px;
 }
+.btn{
+    margin-top: 7px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-family: inherit;
+    cursor: pointer;
+    padding: 7px 10px;
+    border-radius: 2px;
+    transition: background-color .1s linear;
+    border: none;
+    outline:none;
+
+}
+.btnSpecial{
+text-transform: lowercase;
+}
+.btn:hover{
+    background-color: cornflowerblue;
+}
+

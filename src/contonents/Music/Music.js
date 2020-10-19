@@ -5,7 +5,9 @@ import s from './Music.module.css';
 const Music = ()=> {
     return (
         <div>
-       Music
+            <div className={s.musicContainer}>
+      Coming soon...
+            </div>
         </div>
 
     );

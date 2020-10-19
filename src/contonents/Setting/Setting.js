@@ -1,11 +1,10 @@
 import React from 'react';
-import s from './Setting.css';
-
+import s from './Setting.module.css'
 
 const Setting = ()=> {
     return (
-        <div>
-       Settings
+        <div className={s.settingsContainer}>
+            <div> In processing</div>
         </div>
 
     );

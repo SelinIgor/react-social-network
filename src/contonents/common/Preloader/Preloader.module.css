@@ -2,8 +2,5 @@
 .preloader {
     display: block;
     width: 200px;
-    margin-top: 25px;
-    margin-left: auto;
-    margin-right: auto
-
+    margin: 50px auto;
 }

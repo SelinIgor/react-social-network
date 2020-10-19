@@ -1,7 +1,8 @@
 
 .item {
-    margin: 5px;
     border: 3px solid silver;
+    margin: 5px 0px;
+
 
 }
 .item img{
@@ -16,9 +17,11 @@
 }
 .avatar{
     margin-right: 10px;
+    padding: 5px;
 }
 .shareButton{
     border: none;
+    outline: none;
     padding: 2px 5px;
 }
 .shareButton:hover{
@@ -26,4 +29,8 @@
 }
 .shareButton:active{
     font-weight: bold;
+}
+.shareButton {
+    border-radius: 3px;
+    background: transparent;
 }

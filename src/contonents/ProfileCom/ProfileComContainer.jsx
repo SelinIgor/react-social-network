@@ -3,15 +3,12 @@ import ProfileCom from "./ProfileCom";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {getProfileStatus, getUserProfile, savePhoto, updateProfile, updateStatus} from "../../redux/profileReducer";
-import withAuthRedirect from "../../hoc/withAuthRedirect";
+import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 
 
 class ProfileComContainer extends React.Component{
-constructor(props) {
 
-    super(props);
-}
 refreshProfile(){
     let userId = this.props.match.params.userId;
     if(!userId){
@@ -25,9 +22,11 @@ refreshProfile(){
 
         this.refreshProfile()
 }
+
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(this.props.match.params.userId !== prevProps.match.params.userId){
-            this.refreshProfile();}
+        if (this.props.match.params.userId !== prevProps.match.params.userId) {
+            this.refreshProfile();
+        }
     }
 
     render() {

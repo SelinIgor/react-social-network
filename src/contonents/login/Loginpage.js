@@ -6,6 +6,8 @@ import {login} from "../../redux/auth-reducer";
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import styles from "./../FormsControls/FormsControls.module.css"
+import s from './LoginPage.module.css'
+import classNames from 'classnames'
 const Input = Element("input")
 export const required = (value) => (value  ?  undefined : 'Required');
 const Loginpage = (props) =>{
@@ -18,9 +20,9 @@ const Loginpage = (props) =>{
         )
     }
     return(<div>
-        <div className={style.textContainer}>
+        <div className={style.container}>
            <div><p className={style.loginText}> LOGIN</p></div>
-            <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
+            <LoginReduxForm  onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
 </div>
     </div>)
 };
@@ -30,11 +32,12 @@ const LoginForm = (props) =>{
         <Field type="login" name="email" placeholder="your login" component={Input} validate={ required }/>
         <Field type="password" name="password" placeholder="your password" component={Input} validate={ required }/>
         <Field type="checkbox" name="rememberMe" component={"input"}/> remember me
-            {(props.error)?<div className={styles.spanError}>{props.error}</div>:undefined}
-            {props.captchaUrl && <div><img src={props.captchaUrl} /><div><Field type="text" name="captcha" placeholder={"enter symbols what you see"} component={"input"}/></div> </div>}
-        <button type="submit">Submit</button>
+            {(props.error)?<div className={styles.spanError}>{props.error}</div>:<></>}
+            {props.captchaUrl && <div><img src={props.captchaUrl} alt={"captcha"}/><div><Field type="text" name="captcha" placeholder={"enter symbols what you see"} component={"input"}/></div> </div>}
+        <button type="submit" className={buttonClasses }>Submit</button>
     </form>)
 };
+const buttonClasses = classNames(s.btn,s.btnSpecial)
 const LoginReduxForm = reduxForm({
     form: "login"
 })(LoginForm);

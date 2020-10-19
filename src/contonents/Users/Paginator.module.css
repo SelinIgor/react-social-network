@@ -1,0 +1,36 @@
+.selectedPage{
+    font-weight: 700;
+}
+.button{
+   margin: 5px 5px;
+    padding: 5px 10px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color .1s linear;
+    border: none;
+    outline:none;
+    resize: none;
+}
+.button:hover{
+    background-color: cornflowerblue;
+ }
+.buttonsContainer{
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+.controlButton{
+    margin: 0px 5px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background-color .1s linear;
+    border: none;
+    outline:none;
+    resize: none;
+ }
+.controlButton:hover{
+    background-color: palevioletred;
+}
