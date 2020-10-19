@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import Nav from "./contonents/Havbar/Nav";
 import  {BrowserRouter, Route} from "react-router-dom";
 import {Redirect} from "react-router-dom";
 import  {withRouter} from "react-router-dom";
@@ -8,7 +7,6 @@ import Music from "./contonents/Music/Music";
 import MessagesContainer from "./contonents/Masseges/MassegesContainer";
 import UsersContainer from "./contonents/Users/UsersContainer";
 import ProfileComContainer from "./contonents/ProfileCom/ProfileComContainer";
-import HeaderContainer from "./contonents/Header/HeaderContainer";
 import LoginPage from "./contonents/login/Loginpage";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
@@ -17,25 +15,22 @@ import Preloader from "./contonents/common/Preloader/Preloader";
 import store from "./redux/redux-store";
 import Footer from "./contonents/Footer/Footer";
 import Setting from "./contonents/Setting/Setting";
-
-
+import Header from "./contonents/Header/Header";
 
 class App extends React.Component {
+
 
     componentDidMount() {
         this.props.initializeApp();
     }
+
     render() {
         if(!this.props.initialized){
             return <Preloader/>
         }
         return (
             <div className="app-wrapper">
-
-                <HeaderContainer/>
-                <Nav/>
-
-
+                <Header/>
                 <div className="app-wrapper-content">
                     <Route path={"/react-social-network" && "/" } render={() => <Redirect to={"/profile"}/>}/>
                     <Route path={"/profile/:userId?"} render={() => <ProfileComContainer/>}/>
