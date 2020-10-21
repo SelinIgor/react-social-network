@@ -1,6 +1,9 @@
 .Header{
     background: #4a6da7;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
 }
 .logoContainer img{
@@ -17,7 +20,4 @@
     margin-left: 5px;
     font-size: 20px;
     font-weight: 700;
-}
-.container{
-    display: none;
 }

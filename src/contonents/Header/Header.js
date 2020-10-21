@@ -9,27 +9,30 @@ import $ from "jquery"
 class Header extends React.Component {
     componentDidMount() {
         $(function (){
-            let header = $("#header");
             let inner =$("#inner")
             let headerH = inner.innerHeight();
-            let nav= $("#nav");
 
 
             $(window).on("scroll resize load",function (){
                 let scrollPos = $(window).scrollTop();
                 if(scrollPos > headerH){
-                header.addClass(n.container);
-                nav.addClass(s.fixed)
+                inner.addClass(s.fixed)
 
             }
         else {
-                header.removeClass(n.container);
-                    nav.removeClass(s.fixed)
+                    inner.removeClass(s.fixed)
             }
             })
+let container = $("#container");
+            $("#toggleMenu").on("click", function (event){
 
+                event.preventDefault();
+                container.toggleClass(s.show)
 
-
+            });
+            $("NavLink").on("click", function (){
+                container.removeClass(s.show)
+            })
 
         })
     }
@@ -39,45 +42,38 @@ class Header extends React.Component {
         return (<div>
             <div id={"inner"}>
             {/*Header*/}
-            <header className={n.Header}  id={"header"}>
+            <header className={n.Header}>
                 <div>
                     <div className={n.logoContainer}>
-                        <div><img
+                        <div><img alt={"logo"}
                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Inkscape.logo.svg/390px-Inkscape.logo.svg.png"/>
                         </div>
                         <div className={n.nameLogo}>Keetouch</div>
                     </div>
 
                 </div>
+              <button className={s.burger}>  <div  id={"toggleMenu"}><i className="fas fa-bars"></i></div></button>
 
             </header>
-
-            {/*Hav*/}
             <nav className={s.Nav} id={"nav"}>
                 <div>
-                    <div className={s.Container}>
-                        <div className={s.menu}>
-                            <NavLink to="/profile" className={s.nav} activeClassName={s.active}>Profile</NavLink>
+                    <div className={s.Container} id={"container"}>
+                            <NavLink to="/profile" className={s.nav} activeClassName={s.active} id={"navItem"}>Profile</NavLink>
 
-                            <NavLink to="/messages" className={s.nav} activeClassName={s.active}>Messages</NavLink>
-                            <NavLink to="/users" className={s.nav} activeClassName={s.active}> Users</NavLink>
+                            <NavLink to="/messages" className={s.nav} activeClassName={s.active} id={"navItem"}>Messages</NavLink>
+                            <NavLink to="/users" className={s.nav} activeClassName={s.active} id={"navItem"}> Users</NavLink>
 
-                            <NavLink to="/music" className={s.nav} activeClassName={s.active}>Music</NavLink>
+                            <NavLink to="/music" className={s.nav} activeClassName={s.active} id={"navItem"}>Music</NavLink>
 
 
-                            <NavLink to="/setting" className={s.nav} activeClassName={s.active}> Setting</NavLink>
-                        </div>
-                        <div>
-
+                            <NavLink to="/setting" className={s.nav} activeClassName={s.active} id={"navItem"}> Setting</NavLink>
                             {
                                 this.props.isAuth ?
 
-                                    <NavLink to={"#"} className={s.nav} activeClassName={s.active} onClick={this.props.logout}>Exit</NavLink>
+                                    <NavLink to={"#"} className={s.nav} onClick={this.props.logout} id={"navItem"}>Exit</NavLink>
                                     :
-                                    <NavLink className={s.nav} activeClassName={s.active} to={"/login"}>Login</NavLink>
+                                    <NavLink className={s.nav} to={"/login"} id={"navItem"}>Login</NavLink>
                             }
-                        </div>
-
 
 
                     </div>
