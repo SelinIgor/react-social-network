@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import {logout} from "../../redux/auth-reducer";
 import $ from "jquery"
 
-class Header extends React.Component {
+class HeaderWithNavigation extends React.Component {
     componentDidMount() {
         $(function (){
             let inner =$("#inner")
@@ -30,7 +30,7 @@ let container = $("#container");
                 container.toggleClass(s.show)
 
             });
-            $("NavLink").on("click", function (){
+            $("#container:only-child").on("click", function (){
                 container.removeClass(s.show)
             })
 
@@ -41,7 +41,7 @@ let container = $("#container");
 
         return (<div>
             <div id={"inner"}>
-            {/*Header*/}
+            {/*HeaderWithNavigation*/}
             <header className={n.Header}>
                 <div>
                     <div className={n.logoContainer}>
@@ -57,7 +57,7 @@ let container = $("#container");
             </header>
             <nav className={s.Nav} id={"nav"}>
                 <div>
-                    <div className={s.Container} id={"container"}>
+                    <div className={s.Container} id={"container"} >
                             <NavLink to="/profile" className={s.nav} activeClassName={s.active} id={"navItem"}>Profile</NavLink>
 
                             <NavLink to="/messages" className={s.nav} activeClassName={s.active} id={"navItem"}>Messages</NavLink>
@@ -92,4 +92,4 @@ function mapStateToProps(state) {
         }
     }
 
-    export default connect(mapStateToProps,{ logout})(Header)
+    export default connect(mapStateToProps,{ logout})(HeaderWithNavigation)

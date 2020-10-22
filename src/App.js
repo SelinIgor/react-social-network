@@ -15,7 +15,7 @@ import Preloader from "./contonents/common/Preloader/Preloader";
 import store from "./redux/redux-store";
 import Footer from "./contonents/Footer/Footer";
 import Setting from "./contonents/Setting/Setting";
-import Header from "./contonents/Header/Header";
+import Header from "./contonents/Header/HeaderWithNavigation";
 
 class App extends React.Component {
 
