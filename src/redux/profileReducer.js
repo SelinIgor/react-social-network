@@ -2,73 +2,42 @@ import {ProfileAPI, usersAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
 const ADD_POST = 'ADD_POST';
 const ADD_LIKE ="ADD_LIKE";
+
 const SET_USER_PROFILE='SET_USER_PROFILE';
 const SET_PROFILE_STATUS='SET_PROFILE_STATUS';
 const SAVE_PHOTO = 'SAVE_PHOTO'
 const picture = "https://klike.net/uploads/posts/2019-03/1551511784_4.jpg"
-
-type postDataType = {
-    massege: string
-    kartinka: string| typeof picture
-    likes: number
-    id: number
-    liked: boolean
-}
-type ProfileType = {
-userId: number
-    lookingForAJob: boolean
-    lookingForAJobDescription: string
-    fullName: string
-    contacts: Array<string>
-    photos: PhotosType
-}
-type PhotosType = {
-    small: string | null
-    large: string | null
-}
 let InitialState ={
    profile: null,
     status:null,
     postData :[{massege:"Hi there, I'm a new user", kartinka: picture, likes:201, id:1,liked:false},
-        {massege:'Have a nice day to everyone' ,  kartinka:picture ,likes:15,id:2,liked: false},
+        {massege:'Have a nice day to everyone' ,kartinka:picture ,likes:15,id:2,liked: false},
         {massege:'I want to get an awesome experience' ,kartinka:picture ,likes:64,id:3,liked:false}],
     buttonDef: "like"
 }
-type InitialStateType ={
-    profile:  ProfileType | null,
-    status: null | string
-    postData: Array <postDataType>,
-    buttonDef: string
-}
 
-let profileReducer=(state = InitialState,action:any):InitialStateType=> {
+
+let profileReducer=(state = InitialState,action)=> {
     switch (action.type) {
         case ADD_POST:
         {
             let NewPost = {
                 massege: action.newPostText,
                 kartinka: "https://klike.net/uploads/posts/2019-03/1551511784_4.jpg",
-                likes: 0,
-                id: 4,
-                liked: false
-
+                likes: 12
             };
-            return {
-                ...state,
-                // @ts-ignore
-                postData: [...state.postData, NewPost]
-
+            return  {...state,
+                postData:[...state.postData,NewPost],
             };
         }
         case ADD_LIKE:{
-
             return {
                 ...state,
                 postData: state.postData.map(u=>{
-                    if(u.id===action.postId && !u.liked){
+                    if(u.id===action.postId && u.liked=== false){
                         u={...u, likes: u.likes + 1, liked: true}
                     }
-                    else if(u.id===action.postId && u.liked){
+                    else if(u.id===action.postId && u.liked=== true){
                         u={...u, likes: u.likes - 1, liked: false}
                     }
                     return u;
@@ -89,79 +58,66 @@ let profileReducer=(state = InitialState,action:any):InitialStateType=> {
            }
         }
         case SAVE_PHOTO:{
-
             return {
                 ...state,
-                // @ts-ignore
                 profile: {...state.profile, photos: action.photos}
             }
         }
         default: return state;
     }
 }
-type addPostActionCreatorType = {
-    type: typeof ADD_POST
-    newPostText: string
-}
-export const addPostActionCreator=(newPostText:string):addPostActionCreatorType=>{
+
+export const addPostActionCreator=(newPostText)=>{
     return{type: ADD_POST,newPostText}
 
 }
-type addLikeACType = {
-    type: typeof ADD_LIKE
-    postId: number
-}
-export const addLikeAC = (postId:number):addLikeACType =>{
+export const addLikeAC = (postId) =>{
     return{type:ADD_LIKE, postId }
 }
-type setUserProfileType ={
-    type: typeof SET_USER_PROFILE
-    profile: Array <ProfileType>
-}
-export const setUserProfile = (profile:Array<ProfileType>):setUserProfileType=>{
+export const setUserProfile = (profile)=>{
     return{type:SET_USER_PROFILE, profile}
 }
-export const getUserProfile = (userId:number) =>{
-   return (dispatch:any)=>{
-       usersAPI.setProfile(userId).then((response: { data: ProfileType[]; }) => {
+export const getUserProfile = (userId) =>{
+   return (dispatch)=>{
+       usersAPI.setProfile(userId).then(response => {
           dispatch(setUserProfile(response.data));
        });
     }
 }
-export const setProfileStatus =(status: string)=>{
+export const setProfileStatus =(status)=>{
     return{type: SET_PROFILE_STATUS, status }
 
 }
-export const savePhotoSuccess = (photos:Array<PhotosType>)=>{
+export const savePhotoSuccess = (photos)=>{
     return{type:SAVE_PHOTO, photos}
 }
-export const getProfileStatus = (userId:number) =>{
-    return(dispatch:any)=>{
-        ProfileAPI.getStatus(userId).then((response: { data: string; })=>{
+export const getProfileStatus = (userId) =>{
+    return(dispatch)=>{
+        ProfileAPI.getStatus(userId).then(response=>{
             dispatch(setProfileStatus(response.data))
         })
     }
 }
-export const updateStatus =(status:string)=>{
-    return(dispatch:any)=>{
-        ProfileAPI.updateStatus(status).then((response: { data: { resultCode: number; }; })=>{
+export const updateStatus =(status)=>{
+    return(dispatch)=>{
+        ProfileAPI.updateStatus(status).then(response=>{
             if(response.data.resultCode===0){
                 dispatch(setProfileStatus(status))
             }
         })
     }
 }
-export const savePhoto =(file:string)=> (dispatch:any)=> {
-        ProfileAPI.savePhoto(file).then((response: { data: { resultCode: number; data: { photos: PhotosType[]; }; }; }) =>{
+export const savePhoto =(file)=> (dispatch)=> {
+        ProfileAPI.savePhoto(file).then(response =>{
         if (response.data.resultCode === 0) {
             dispatch(savePhotoSuccess(response.data.data.photos))
         }})
 
 }
-export const updateProfile =(profile:Array<ProfileType>)=>{
-    return(dispatch:any,getState:any)=>{
+export const updateProfile =(profile)=>{
+    return(dispatch,getState)=>{
         const userId = getState().auth.id
-        ProfileAPI.updateProfile(profile).then((response: { data: { resultCode: number; messages: string | any[]; }; })=>{
+        ProfileAPI.updateProfile(profile).then(response=>{
             if(response.data.resultCode===0){
                 dispatch(getUserProfile(userId))
             }

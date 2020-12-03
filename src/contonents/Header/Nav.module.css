@@ -3,8 +3,6 @@
     background-color: #4a6da7;
     font-weight: 700;
     width: 100%;
-    box-sizing: border-box;
-    resize: none;
 }
 .nav {
     color: #000;
@@ -13,8 +11,6 @@
     font-size: 15px;
     transition: 0.2s linear color;
     margin: 10px;
-    height: 20px;
-    resize: none;
 }
 .nav:last-child{
    padding-right: 10px;
@@ -29,14 +25,12 @@
 .active{
     color: lavender;
     border-bottom: 3px solid black;
-    resize: none;
 }
 .Container{
     display: flex;
     flex-direction: row;
     align-items: center;
     align-content: center;
-    box-sizing: border-box;
 
 }
 
