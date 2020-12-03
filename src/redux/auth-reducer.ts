@@ -1,22 +1,28 @@
 import {authAPI, SecurityAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
-
-;
-
 const SET_USER_DATA = 'SET_USER_DATA';
 const GET_CAPTCHA_URL = `GET_CAPTCHA_URL`;
-let InitialState ={
+
+ type InitialStateType ={
+    data: {
+        id: number | null
+        email: string | null
+        login: string | null
+        isAuth:boolean
+        captchaUrl: string | null
+    }
+};
+let InitialState:InitialStateType ={
     data: {
         id: null,
         email: null,
         login: null,
         isAuth:false,
-        photo: null,
         captchaUrl: null
     }
 };
 
-let authReducer =(state = InitialState,action)=> {
+let authReducer =(state = InitialState,action:any):InitialStateType=> {
     switch (action.type) {
         case SET_USER_DATA:{
             return  {...state,
@@ -24,10 +30,10 @@ let authReducer =(state = InitialState,action)=> {
             };
         }
         case GET_CAPTCHA_URL:{
-            debugger
+
             return {
                 ...state,
-                captchaUrl: action.captchaUrl
+               ...action.captchaUrl
 
             }
 
@@ -36,15 +42,15 @@ let authReducer =(state = InitialState,action)=> {
     }
 
 };
-export let setUserAuthData = (id, email, login, isAuth)=>{
+export let setUserAuthData = (id:number|null, email:string|null, login:string|null, isAuth:boolean|null)=>{
     return{
         type:SET_USER_DATA,
         data:{ id,email,login,isAuth}
     }
 };
 export const getUserAuthData = () =>
-     (dispatch)=>{
-         return authAPI.authme().then(response => {
+     (dispatch:any)=>{
+         return authAPI.authme().then((response: { data: { resultCode: number; data: { id: any; email: any; login: any; }; }; }) => {
             if(response.data.resultCode===0) {
                 let {id,email,login} = response.data.data;
                 dispatch(setUserAuthData(id,email,login,true));
@@ -52,10 +58,10 @@ export const getUserAuthData = () =>
         });
 
 };
-export const login = (email,password,rememberMe,captcha) =>{
+export const login = (email:string,password:string,rememberMe:boolean,captcha:any) =>{
 
-    return (dispatch)=>{
-        authAPI.login(email,password,rememberMe,captcha).then(response => {
+    return (dispatch:any)=>{
+        authAPI.login(email,password,rememberMe,captcha).then((response: { data: { resultCode: number; messages: string | any[]; }; }) => {
             if(response.data.resultCode===0) {
                 dispatch(getUserAuthData());
             }
@@ -73,15 +79,15 @@ export const login = (email,password,rememberMe,captcha) =>{
         });
     }
 };
-export const setCaptchaSuccess = (captchaUrl)=>{
+export const setCaptchaSuccess = (captchaUrl:any)=>{
     return{
         type:GET_CAPTCHA_URL,
         captchaUrl
     }
 };
 export const getCaptchaUrl = ()=>{
-    return (dispatch)=>{
-        SecurityAPI.getCaptcha().then(response =>{
+    return (dispatch:any)=>{
+        SecurityAPI.getCaptcha().then((response: { data: { url: any; }; }) =>{
             debugger
             const captchaUrl = response.data.url;
             dispatch(setCaptchaSuccess(captchaUrl))
@@ -90,8 +96,8 @@ export const getCaptchaUrl = ()=>{
     }
 }
 export const logout = () =>{
-    return (dispatch)=>{
-        authAPI.logout().then(response => {
+    return (dispatch:any)=>{
+        authAPI.logout().then((response: { data: { resultCode: number; }; }) => {
             if(response.data.resultCode===0) {
                 dispatch(setUserAuthData(null,null,null,false));
             }

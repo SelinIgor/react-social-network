@@ -3,15 +3,35 @@ import s from "./Users.module.css";
 import userPhoto from "../../datas/img/user.png";
 import {NavLink} from "react-router-dom";
 
-let Users = (props) => {
-    return  <div>
+type User = {
+    id:number
+    status?: string
+    name: string
+    photos: Photo
+    followed: boolean
+}
+type Photo ={
+    small?: string
+    large?: string
+}
+type PropsType = {
+    users: Array<User>
+    followProgress: (id:number)=>any
+    follow:(id:number)=>void
+    unfollow: (id:number)=>void
+}
 
+
+
+let Users:React.FC<PropsType> = (props) => {
+
+
+    return  <div>
         {
             props.users.map(u => <div key={u.id}>
                 <div>
                     <div  className={s.container}>
                     <div>
-
                         <div className={s.avatarName}><NavLink to={"/profile/"+u.id}>
                             <img alt={"user's photo"} className={s.userImg} src={u.photos.small != null ? u.photos.small : userPhoto}/>
                         </NavLink>
@@ -19,10 +39,12 @@ let Users = (props) => {
                             <div className={s.followBtn}>
                                 {
                                     u.followed
+                                        // @ts-ignore
                                         ? <button  disabled={props.followProgress.some(id=> id===u.id)} onClick={() => {
                                             props.unfollow(u.id);
 
                                         }}> unfollow</button>
+                                        // @ts-ignore
                                         : <button disabled={props.followProgress.some(id=> id===u.id)}  onClick={() => {
                                             props.follow(u.id);
                                         }}>follow</button>

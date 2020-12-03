@@ -1,7 +1,19 @@
-
 const ADD_SMS = "ADD_SMS";
 
-let InitialState ={
+type Masseges = {
+    text:string
+}
+type Dialogs ={
+    name:string
+    id:number
+    kartinka: string
+}
+type stateType = {
+    masseges: Array <Masseges>,
+dialogs: Array <Dialogs>
+}
+
+let InitialState:stateType ={
     masseges :[{text:'Hi there'},{text:'What Am I doing wrong?'},{text:'Nothing. Cant get it'},{text:'Okey'}],
     dialogs :[{name:"Igor", id:1, kartinka:"https://i.pinimg.com/736x/c9/eb/dd/c9ebddca44e1b308c672e641af252be5.jpg"},
         {name:"Nestor", id:2,kartinka:"https://i.pinimg.com/736x/c9/eb/dd/c9ebddca44e1b308c672e641af252be5.jpg"},
@@ -10,14 +22,15 @@ let InitialState ={
 
 }
 
-let dialogsReducer=(state = InitialState,action)=>{
+let dialogsReducer=(state = InitialState,action:any):stateType=>{
 switch (action.type) {
     case ADD_SMS: {
         let stateCopy = {...state,
             masseges:[...state.masseges]};
 
         let NewSms = {
-            text: action.newMassage
+            text: action.newMassage,
+
         };
         stateCopy.masseges.push(NewSms);
         return stateCopy;
@@ -27,9 +40,12 @@ switch (action.type) {
 
 
 }
+type sendSmsType = {
+    type: typeof ADD_SMS,
+    newMassage:string
+}
 
-
-export let sendSmsActionCreator=(newMassage)=>{
+export let sendSmsActionCreator=(newMassage:string):sendSmsType=>{
     return{type: ADD_SMS, newMassage}
 };
 
