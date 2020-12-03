@@ -7,16 +7,8 @@ const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 const SET_TOTAL_USERS_COUNT ="SET_TOTAL_USERS_COUNT";
 const TOGGLE_IS_FETCHING ="TOGGLE_IS_FETCHING";
 const FOLLOWING_IN_PROGRESS= "FOLLOWING_IN_PROGRESS";
-type InitialType ={
-    users: Array <Object>
-    pageSize: number,
-    totalUsersCount: number,
-    currentPage:number,
-    portionSize:number,
-    isFetching : boolean,
-    followProgress: Array <Object>
-}
-let InitialState:InitialType ={
+
+let InitialState ={
 users:[],
 pageSize: 5,
 totalUsersCount: 60,
@@ -28,15 +20,13 @@ followProgress: []
 };
 
 
-let usersReducer=(state = InitialState,action:any):InitialType=> {
+let usersReducer=(state = InitialState,action)=> {
     switch (action.type) {
         case FOLLOW:{
             return{
                 ...state,
                 users: state.users.map(u=>{
-                    // @ts-ignore
                     if(u.id===action.usersId){
-                        // @ts-ignore
                         u={...u, followed: true}
                     }
                     return u;
@@ -48,9 +38,7 @@ let usersReducer=(state = InitialState,action:any):InitialType=> {
             return{
                 ...state,
                 users: state.users.map(u=>{
-                    // @ts-ignore
                     if(u.id===action.usersId){
-                        // @ts-ignore
                         u={...u, followed: false}
                     }
                     return u;
@@ -98,73 +86,45 @@ let usersReducer=(state = InitialState,action:any):InitialType=> {
 
     }
 }
-type followType= {
-    type: typeof FOLLOW
-    usersId: number
-}
-export const followS=(usersId:number):followType=>{
+
+export const followS=(usersId)=>{
     return{type: FOLLOW, usersId}
 
 }
-type unfollowType= {
-    type: typeof UNFOLLOW
-    usersId: number
-}
-export const unfollowS=(usersId:number):unfollowType=>{
+export const unfollowS=(usersId)=>{
     return{type: UNFOLLOW, usersId}
 }
-type setUsersType =(users:any)=> {
-    type: typeof SET_USERS
-    users: Array<Object>
-}
-export const setUsers:setUsersType=(users:Array<Object>)=>{
+export const setUsers=(users)=>{
     return{type: SET_USERS,users}
 }
-type setCurrentPageType =(users:any)=> {
-    type: typeof SET_CURRENT_PAGE
-    currentPage: number
-}
-export const setCurrentPage:setCurrentPageType=(currentPage:number)=>{
+export const setCurrentPage=(currentPage)=>{
     return{type: SET_CURRENT_PAGE, currentPage}
 }
-type setTotalUsersCountType =(totalUsersCount: number)=> {
-    type: typeof SET_TOTAL_USERS_COUNT
-    totalUsersCount: number
-}
-export const setTotalUsersCount:setTotalUsersCountType=(totalUsersCount)=>{
+export const setTotalUsersCount=(totalUsersCount)=>{
     return{type: SET_TOTAL_USERS_COUNT, totalUsersCount}
 }
-type setToggleFetchingType =(isFetching:boolean)=> {
-    type: typeof TOGGLE_IS_FETCHING
-    isFetching:boolean
-}
-export const setToggleFetching:setToggleFetchingType=(isFetching:boolean)=>{
+export const setToggleFetching=(isFetching)=>{
     return{type: TOGGLE_IS_FETCHING, isFetching}
 }
-type followingInProgressType =(isFetching:boolean,userId:number)=> {
-    type: typeof FOLLOWING_IN_PROGRESS
-    isFetching:boolean,
-    userId: number
-}
-export const followingInProgress:followingInProgressType=(isFetching, userId)=>{
+export const followingInProgress=(isFetching, userId)=>{
     return{type: FOLLOWING_IN_PROGRESS, isFetching, userId}
 }
-export const getUsers = (currentPage:number,pageSize:number) => {
-    return (dispatch:any) => {
+export const getUsers = (currentPage,pageSize) => {
+    return (dispatch) => {
         dispatch(setCurrentPage(currentPage));
         dispatch(setToggleFetching(true))
-        usersAPI.getUsers(currentPage, pageSize).then((data: { items: any; totalCount: any; }) => {
+        usersAPI.getUsers(currentPage, pageSize).then(data => {
             dispatch(setToggleFetching(false))
             dispatch(setUsers(data.items));
             dispatch(setTotalUsersCount(data.totalCount));
         });
     }
 }
-export const follow = (userId:number) =>{
-    return(dispatch:any) =>{
+export const follow = (userId) =>{
+    return(dispatch) =>{
         dispatch(followingInProgress(true,userId));
         usersAPI.follow(userId)
-            .then((response: { data: { resultCode: number; }; }) => {
+            .then(response => {
                 if(response.data.resultCode===0){
                     dispatch(followS(userId));
                 }
@@ -173,11 +133,11 @@ export const follow = (userId:number) =>{
     }
 }
 
-export const unfollow = (userId:number) =>{
-    return(dispatch:any) =>{
+export const unfollow = (userId) =>{
+    return(dispatch) =>{
         dispatch(followingInProgress(true,userId));
         usersAPI.unfollow(userId)
-            .then((response: { data: { resultCode: number; }; }) => {
+            .then(response => {
                 if(response.data.resultCode===0){
                     dispatch(unfollowS(userId));
                 }
