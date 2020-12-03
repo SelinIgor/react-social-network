@@ -12,15 +12,41 @@ import {
     getFollowProgress,
     getIsFetching,
 } from "../../redux/usersSelectors";
-import Paginator from "./Pagitanor";
+import Paginator from "./Paginator";
 
-class UsersContainer extends React.Component{
+type PropsType ={
+    currentPage: number
+    pageSize: number
+    totalUsersCount: number
+    getUsers: (currentPage: number, pageSize: number)=>void
+    isFetching: boolean
+    users: Array<User>
+    followProgress: (id:number)=>any
+    follow:(id:number)=>void
+    unfollow: (id:number)=>void
+    followingInProgress: ()=>void
+    portionSize: number
+}
+type User = {
+    id:number
+    status?: string
+    name: string
+    photos: Photo
+    followed: boolean
+}
+type Photo ={
+    small?: string
+    large?: string
+}
+
+
+class UsersContainer extends React.Component<PropsType>{
 
     componentDidMount() {
        this.props.getUsers(this.props.currentPage, this.props.pageSize)
     }
 
-    onClickChanged = (currentPage) =>{
+    onClickChanged = (currentPage:number) =>{
         this.props.getUsers(currentPage, this.props.pageSize)
 
     }
@@ -33,17 +59,18 @@ class UsersContainer extends React.Component{
                    currentPage={this.props.currentPage}/>
             {this.props.isFetching? <Preloader/>:
             <Users
-                      users={this.props.users}
-                      unfollow={this.props.unfollow}
-                      follow={this.props.follow}
-                   followingInProgress={this.props.followingInProgress}
-                   followProgress={this.props.followProgress}
-                   portionSize={this.props.portionSize}
-        > </Users>}
+    users={this.props.users}
+    unfollow={this.props.unfollow}
+    follow={this.props.follow}
+                // @ts-ignore
+    followingInProgress={this.props.followingInProgress}
+    followProgress={this.props.followProgress}
+    portionSize={this.props.portionSize}
+    />}
             </>
     }
 }
-let mapStateToProps = (state) =>{
+let mapStateToProps = (state:any) =>{
     return {
        users: state.UsersPage.users,
         pageSize: state.UsersPage.pageSize,
@@ -55,6 +82,7 @@ let mapStateToProps = (state) =>{
     }
 }
 
+// @ts-ignore
 export default connect(mapStateToProps,{followingInProgress,getUsers,follow,unfollow})(UsersContainer);
 
 
