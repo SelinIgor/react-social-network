@@ -52,7 +52,7 @@ let container = $("#container");
                     </div>
 
                 </div>
-              <button className={s.burger}>  <div  id={"toggleMenu"}><i className="fas fa-bars"></i></div></button>
+              <button className={s.burger}>  <div  id={"toggleMenu"}><i className="fas fa-bars"/></div></button>
 
             </header>
             <nav className={s.Nav} id={"nav"}>
