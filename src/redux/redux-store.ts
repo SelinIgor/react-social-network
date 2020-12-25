@@ -8,7 +8,7 @@ import {reducer as formReducer} from "redux-form";
 import appReducer from "./appReducer";
 
 let reducers = combineReducers(
-    {ProfilePage:profileReducer,
+    /**/{ProfilePage:profileReducer,
              MassagePage:dialogsReducer,
              UsersPage: usersReducer,
              auth:authReducer,
@@ -16,6 +16,11 @@ let reducers = combineReducers(
              appCommon: appReducer
     }
     );
+type ReducersType = typeof reducers;
+export type AppStateType = ReturnType <ReducersType>
+
 let store = createStore(reducers,applyMiddleware(thunkMiddleware));
+// @ts-ignore
 window.store = store;
+// @ts-ignore
 export default store;

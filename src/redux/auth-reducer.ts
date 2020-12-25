@@ -4,6 +4,7 @@ const SET_USER_DATA = 'SET_USER_DATA';
 const GET_CAPTCHA_URL = `GET_CAPTCHA_URL`;
 
  type InitialStateType ={
+
     data: {
         id: number | null
         email: string | null

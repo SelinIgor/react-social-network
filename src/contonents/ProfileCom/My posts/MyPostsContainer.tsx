@@ -1,9 +1,9 @@
 import React from 'react';
-import {addLikeAC, addPostActionCreator} from "../../../redux/profileReducer";
+import {addLikeAC, AppPostNReset} from "../../../redux/profileReducer";
 import MyPosts from "./MyPosts";
 import {connect} from "react-redux";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state:any) => {
     return {
         postData: state.ProfilePage.postData,
         newPostText: state.ProfilePage.newPostText,
@@ -11,6 +11,6 @@ const mapStateToProps = (state) => {
         profile: state.ProfilePage.profile
     }
 }
-const MyPostsContainer = connect(mapStateToProps,{addPost:addPostActionCreator, addLike:addLikeAC})(MyPosts);
+const MyPostsContainer = connect(mapStateToProps,{AppPostNReset, addLike:addLikeAC})(MyPosts);
 
 export default MyPostsContainer;

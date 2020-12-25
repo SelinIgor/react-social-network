@@ -1,5 +1,5 @@
 import {ProfileAPI, usersAPI} from "../api/api";
-import {stopSubmit} from "redux-form";
+import {reset, stopSubmit} from "redux-form";
 const ADD_POST = 'ADD_POST';
 const ADD_LIKE ="ADD_LIKE";
 const SET_USER_PROFILE='SET_USER_PROFILE';
@@ -103,14 +103,23 @@ type addPostActionCreatorType = {
     type: typeof ADD_POST
     newPostText: string
 }
-export const addPostActionCreator=(newPostText:string):addPostActionCreatorType=>{
+
+export const addPost=(newPostText:string):addPostActionCreatorType=>{
     return{type: ADD_POST,newPostText}
 
 }
+export const AppPostNReset = (newPostText:string) => {
+    return (dispatch:any) => {
+        dispatch(addPost(newPostText));
+        dispatch(reset("addPost"))
+    }
+};
+
 type addLikeACType = {
     type: typeof ADD_LIKE
     postId: number
 }
+
 export const addLikeAC = (postId:number):addLikeACType =>{
     return{type:ADD_LIKE, postId }
 }

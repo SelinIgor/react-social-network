@@ -13,6 +13,7 @@ import {
     getIsFetching,
 } from "../../redux/usersSelectors";
 import Paginator from "./Paginator";
+import {AppStateType} from "../../redux/redux-store";
 
 type PropsType ={
     currentPage: number
@@ -70,7 +71,7 @@ class UsersContainer extends React.Component<PropsType>{
             </>
     }
 }
-let mapStateToProps = (state:any) =>{
+let mapStateToProps = (state:AppStateType) =>{
     return {
        users: state.UsersPage.users,
         pageSize: state.UsersPage.pageSize,

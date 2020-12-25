@@ -4,9 +4,20 @@ import s from './Nav.module.css'
 import {NavLink} from "react-router-dom";
 import {connect} from "react-redux";
 import {logout} from "../../redux/auth-reducer";
+// @ts-ignore
 import $ from "jquery"
+import {AppStateType} from "../../redux/redux-store";
 
-class HeaderWithNavigation extends React.Component {
+
+type PropsType = {
+    isAuth: boolean
+    logout: ()=> void
+
+
+}
+
+
+class HeaderWithNavigation extends React.Component <PropsType>{
     componentDidMount() {
         $(function (){
             let inner =$("#inner")
@@ -24,7 +35,7 @@ class HeaderWithNavigation extends React.Component {
             }
             })
 let container = $("#container");
-            $("#toggleMenu").on("click", function (event){
+            $("#toggleMenu").on("click", function (event:any){
 
                 event.preventDefault();
                 container.toggleClass(s.show)
@@ -85,7 +96,7 @@ let container = $("#container");
 }
 
 
-function mapStateToProps(state) {
+function mapStateToProps(state:any) {
         return {
             isAuth:state.auth.isAuth,
 
